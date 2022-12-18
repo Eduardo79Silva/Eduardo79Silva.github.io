@@ -16,7 +16,7 @@
   });
     
   $('html, body').on('mousewheel', function() {
-    $('html, body').stop(); // Stops auto-scrolling upon manual scrolling
+    $('html, body').stop(); // Stops autoscrolling upon manual scrolling
   });
 
   // Closes responsive menu when a scroll trigger link is clicked

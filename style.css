@@ -1,4 +1,4 @@
-/*!
+/* !
  * Start Bootstrap - Agency v4.1.1 (https://startbootstrap.com/template-overviews/agency)
  * Copyright 2013-2018 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-agency/blob/master/LICENSE)
@@ -32,6 +32,7 @@ Primary dark:     #2c6995
 Secondary:        #fcbc1d
 Secondary dark:   #fbab25
 */
+
 
 
 body {
@@ -875,7 +876,7 @@ h6 {
   -o-transition: all 0.4s ease 0s;
   transition: all 0.4s ease 0s;
   transform: translateX(250px);
-  background: #2988bc;
+  background: #fbab25;
   border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1187,3 +1188,4 @@ a:hover, a:focus, a:active {
     width: 100%;
   }
 }
+
