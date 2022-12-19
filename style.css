@@ -1233,7 +1233,7 @@ a:hover, a:focus, a:active {
 
       .btn-arrow:hover,
       .btn-arrow:active {
-        background-color: #e6e6e6;
+        background-color: #fcbc1d;
       }
 
       .btn-arrow-left {
@@ -1366,5 +1366,15 @@ a:hover, a:focus, a:active {
 
 .col-lg-6 > *{
     margin-bottom: 10em;
+
     
 }
+
+.col-lg-6 > img{
+    border-radius: 2em;
+    box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.5);
+    
+}
+
+
+
