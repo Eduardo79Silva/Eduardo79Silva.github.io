@@ -46,6 +46,7 @@ p {
 
 a {
   color: #fcbc1d;
+  text-decoration: none;
 }
 
 a:hover {
@@ -335,6 +336,10 @@ header.masthead .intro-text .intro-heading {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   background-color: #212529;
+}
+
+.lead {
+    text-decoration: none;
 }
 
 .portfolio-modal .close-modal .lr .rl {
@@ -1339,3 +1344,27 @@ a:hover, a:focus, a:active {
         cursor: pointer;
       }
 
+
+
+      .alternating-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  width: 50%;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+}
+
+.col-lg-6 > *{
+    margin-bottom: 10em;
+    
+}
