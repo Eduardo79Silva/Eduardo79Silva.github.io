@@ -596,6 +596,7 @@ section#contact .form-group {
 section#contact .form-group input,
 section#contact .form-group textarea {
   padding: 20px;
+  border-radius: 1em;
 }
 
 section#contact .form-group input.form-control {
@@ -752,6 +753,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
 
 .about-btn {
   padding: 16px 32px;
+  border-radius: 1em;
 }
 
 body,
