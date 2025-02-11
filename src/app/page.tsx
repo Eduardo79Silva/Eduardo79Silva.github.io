@@ -11,6 +11,7 @@ import Skills from "../components/Skills";
 import Languages from "../components/Languages";
 import Certifications from "../components/Certifications";
 import YouTubeSection from "../components/YoutubeSection";
+import Contact from "../components/Contact";
 
 export default function Home() {
 	return (
@@ -30,6 +31,7 @@ export default function Home() {
 				<Skills />
 				<Languages />
 				<Certifications />
+				<Contact />
 			</main>
 			<Footer />
 		</div>

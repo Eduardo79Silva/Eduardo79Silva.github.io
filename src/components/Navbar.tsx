@@ -12,6 +12,7 @@ export default function Navbar() {
 	  <a href="#youtube" className="px-4">YouTube</a>
           <a href="#skills" className="px-4">Skills</a>
           <a href="#languages" className="px-4">Languages</a>
+	  <a href="#certifications" className="px-4">Certifications</a>
           <a
             href="/files/CV.pdf"
             target="_blank"
