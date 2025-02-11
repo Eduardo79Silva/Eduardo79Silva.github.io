@@ -9,6 +9,7 @@ import Experience from "../components/Experience";
 import ExtraCurricular from "../components/ExtraCurricular";
 import Skills from "../components/Skills";
 import Languages from "../components/Languages";
+import Certifications from "../components/Certifications";
 import YouTubeSection from "../components/YoutubeSection";
 
 export default function Home() {
@@ -28,9 +29,9 @@ export default function Home() {
 				<YouTubeSection />
 				<Skills />
 				<Languages />
+				<Certifications />
 			</main>
 			<Footer />
 		</div>
 	);
 }
-
