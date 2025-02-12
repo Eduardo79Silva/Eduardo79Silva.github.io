@@ -45,6 +45,12 @@ export default function Projects() {
 						image="/images/graphics_engine.png"
 						link="https://github.com/Eduardo79Silva/racing-game/tree/main/tp2"
 					/>
+					<ProjectCard
+						title="Cannon Clash"
+						description="A Unity-built Local-Coop game made for a GameJam over a weekend. You play as cannon islands that fight of eachother to death!"
+						image="/images/cannon_clash.jpg"
+						link="https://eduardo79silva.itch.io/cannon-clash"
+					/>
 				</div>
 			</div>
 		</section>
@@ -54,7 +60,7 @@ export default function Projects() {
 function ProjectCard({ title, description, image, link }: { title: string; description: string; image: string; link: string; }) {
 	return (
 		<a href={link} target="_blank" rel="noopener noreferrer" className="block w-full">
-			<div className="bg-gray-800 p-6 rounded-lg shadow-lg transition transform hover:scale-105">
+			<div className="bg-gray-800 p-6 rounded-lg shadow-lg transition transform hover:scale-105 flex flex-col min-h-full">
 				<Image
 					src={image}
 					alt={title}
@@ -63,9 +69,9 @@ function ProjectCard({ title, description, image, link }: { title: string; descr
 					className="w-full h-48 sm:h-56 md:h-60 object-cover rounded-lg mb-4"
 				/>
 				<h3 className="text-lg md:text-xl font-bold">{title}</h3>
-				<p className="text-gray-400 mt-2 text-sm md:text-base">{description}</p>
+				{/* Add flex-grow and flex for vertical centering */}
+				<p className="text-gray-400 mt-2 text-sm md:text-base flex-grow flex items-center">{description}</p>
 			</div>
 		</a>
 	);
 }
-
