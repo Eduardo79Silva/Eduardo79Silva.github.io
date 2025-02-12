@@ -14,26 +14,26 @@ import YouTubeSection from "../components/YoutubeSection";
 import Contact from "../components/Contact";
 
 export default function Home() {
-	return (
-		<div>
-			<Head>
-				<title>Eduardo Silva | Portfolio</title>
-				<meta name="description" content="Eduardo Silva's portfolio showcasing game development, AI, and cybersecurity projects." />
-				<link rel="icon" href="/favicon.ico" />
-			</Head>
-			<Navbar />
-			<main>
-				<Hero />
-				<Projects />
-				<Experience />
-				<ExtraCurricular />
-				<YouTubeSection />
-				<Skills />
-				<Languages />
-				<Certifications />
-				<Contact />
-			</main>
-			<Footer />
-		</div>
-	);
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Head>
+        <title>Eduardo Silva | Portfolio</title>
+        <meta name="description" content="Eduardo Silva's portfolio showcasing game development, AI, and cybersecurity projects." />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Navbar />
+      <main className="flex-1">
+        <Hero />
+        <Projects />
+        <Experience />
+        <ExtraCurricular />
+        <YouTubeSection />
+        <Skills />
+        <Languages />
+        <Certifications />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
 }

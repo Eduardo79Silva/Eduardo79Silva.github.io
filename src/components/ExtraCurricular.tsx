@@ -3,10 +3,10 @@ import Image from "next/image";
 
 export default function ExtraCurricular() {
 	return (
-		<section id="extracurricular" className="py-20 bg-gray-900 text-white">
+		<section id="extracurricular" className="py-20 bg-gray-900 text-white px-4 md:px-8">
 			<div className="container mx-auto text-center">
-				<h2 className="text-4xl font-bold">Extra-Curricular Activities</h2>
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+				<h2 className="text-3xl md:text-4xl font-bold">Extra-Curricular Activities</h2>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
 					<ActivityCard
 						title="Covilhã 2019 - Regional Debate Session"
 						description="Organized by the European Youth Parliament (EYP), I participated as a delegate and was selected for the nationals in Porto 2020."
@@ -30,17 +30,10 @@ export default function ExtraCurricular() {
 
 function ActivityCard({ title, description, image }: { title: string; description: string; image: string; }) {
 	return (
-		<div className="bg-gray-800 p-6 rounded-lg shadow-lg flex flex-col items-center">
-			<Image
-				src={image}
-				alt={title}
-				width={400}
-				height={160}
-				className="object-cover rounded-lg mb-4"
-			/>
-			<h3 className="text-xl font-bold">{title}</h3>
-			<p className="text-gray-400 mt-2">{description}</p>
+		<div className="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
+			<img src={image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4" />
+			<h3 className="text-lg md:text-xl font-bold">{title}</h3>
+			<p className="text-gray-400 mt-2 text-sm md:text-base">{description}</p>
 		</div>
 	);
 }
-

@@ -21,19 +21,19 @@ const certifications = [
 
 export default function Certifications() {
 	return (
-		<section id="certifications" className="py-20 bg-gray-900 text-white text-center">
+		<section id="certifications" className="py-20 bg-gray-900 text-white text-center px-4 md:px-8">
 			<div className="container mx-auto">
-				<h2 className="text-4xl font-bold">Certifications</h2>
-				<p className="text-gray-400 mt-2">My professional certifications</p>
+				<h2 className="text-3xl md:text-4xl font-bold">Certifications</h2>
+				<p className="text-gray-400 mt-2 text-sm md:text-base">My professional certifications</p>
 				<div className={`grid ${certifications.length === 1 ? 'grid-cols-1 place-items-center' : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'} gap-6 mt-6`}>
 					{certifications.map((cert, index) => (
-						<div key={index} className="p-6 bg-gray-800 rounded-lg shadow-lg">
-							<h3 className="text-xl font-bold">{cert.title}</h3>
-							<p className="text-gray-400">Earned on: {cert.earnedOn}</p>
-							<p className="text-gray-400">Credential ID: {cert.credentialId}</p>
-							<p className="text-gray-400">Certification Number: {cert.certificationNumber}</p>
-							<a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:underline">View Certification</a>
-							<ul className="mt-4 text-gray-400 text-left">
+						<div key={index} className="p-6 bg-gray-800 rounded-lg shadow-lg text-left max-w-3xl mx-auto">
+							<h3 className="text-lg md:text-xl font-bold">{cert.title}</h3>
+							<p className="text-gray-400 text-sm md:text-base">Earned on: {cert.earnedOn}</p>
+							<p className="text-gray-400 text-sm md:text-base">Credential ID: {cert.credentialId}</p>
+							<p className="text-gray-400 text-sm md:text-base">Certification Number: {cert.certificationNumber}</p>
+							<a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-yellow-500 hover:underline text-sm md:text-base">View Certification</a>
+							<ul className="mt-4 text-gray-400 text-left text-sm md:text-base">
 								{cert.skills.map((skill, i) => (
 									<li key={i}>✔ {skill}</li>
 								))}
