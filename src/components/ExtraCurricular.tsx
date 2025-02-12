@@ -31,7 +31,13 @@ export default function ExtraCurricular() {
 function ActivityCard({ title, description, image }: { title: string; description: string; image: string; }) {
 	return (
 		<div className="bg-gray-800 p-6 rounded-lg shadow-lg text-center">
-			<img src={image} alt={title} className="w-full h-40 object-cover rounded-lg mb-4" />
+			<Image
+				src={image}
+				alt={title}
+				width={400}
+				height={160}
+				className="object-cover rounded-lg mb-4"
+			/>
 			<h3 className="text-lg md:text-xl font-bold">{title}</h3>
 			<p className="text-gray-400 mt-2 text-sm md:text-base">{description}</p>
 		</div>
