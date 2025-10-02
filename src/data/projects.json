@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Raytracing Engine",
+    "description": "A Vulkan-based raytracing engine supporting emissive materials and a denoiser. This project serves a research and for further integration with my game engine. Will still implement meshes calculations and importance sampling.",
+    "image": "/images/raytracing.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/Hikari-RayTracer"
+    },
+    "featured": true
+  },
+  {
+    "title": "Turbo Soccer",
+    "description": "A local-multiplayer car-soccer game built in Unity, where players score goals in a FEUP-themed arena by navigating obstacles and collecting power-ups.",
+    "image": "/images/rocket_clone.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/Turbo-Soccer",
+      "itch": "https://afonsomm.itch.io/feup-turbo-soccer"
+    }
+  },
+  {
+    "title": "DeepMine - A Strategic Mining Game",
+    "description": "A strategic 2D mining game where unstable terrain and chain-reaction collapses make every dig decision critical. Built in 72 hours for Ludum Dare 57 using Unity, featuring grid-based systems, physics-driven gameplay, and a risk-reward ore economy.",
+    "image": "/images/ld57.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/LD57",
+      "itch": "https://eduardo79silva.itch.io/deepmine"
+    }
+  },
+  {
+    "title": "Egg Retrieval Game",
+    "description": "WebGL bird game where the player retrieves eggs and returns them to the nest, featuring custom terrain, trees, textures, and interactive gameplay.",
+    "image": "/images/egg_game.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/bird-game/"
+    }
+  },
+  {
+    "title": "TurboThree Racing Game",
+    "description": "3D graphics and game development projects with Three.js, featuring object modeling, procedural generation, particle systems, and interactive UIs",
+    "image": "/images/car_racing.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/racing-game"
+    }
+  },
+  {
+    "title": "Graphics Engine",
+    "description": "Implemented using Three.js, this engine features bump map textures and video textures. It supports wireframe view, buffer geometry with color gradients, and custom cameras in a shooting range scene.",
+    "image": "/images/graphics_engine.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/racing-game/"
+    }
+  },
+  {
+    "title": "Cannon Clash",
+    "description": "A Unity-built Local-Coop game made for a GameJam over a weekend. Cannon islands fight to the death!",
+    "image": "/images/cannon_clash.jpg",
+    "links": {
+      "itch": "https://eduardo79silva.itch.io/cannon-clash"
+    }
+  },
+  {
+    "title": "FEP Chatbot",
+    "description": "A scalable AI-powered chatbot for a Portuguese university, built with TypeScript and Python. Leveraged Azure OpenAI to provide the LLM capacity for the chatbot. The chatbot was deployed on premises with a custom made deployment pipeline.",
+    "image": "/images/chatbot.png",
+    "links": {
+      "website": "https://youtu.be/Qx2BIe12lSY"
+    }
+  }
+]

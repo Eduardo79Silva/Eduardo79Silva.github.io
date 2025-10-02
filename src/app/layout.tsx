@@ -1,36 +1,31 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import { siteMetadata, structuredData } from "@/lib/metadata";
+import { ThemeProvider } from "@/contexts/ThemeProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-const geistSans = Geist({
-	variable: "--font-geist-sans",
-	subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
-});
-
-export const metadata = {
-	title: "Eduardo Silva | Portfolio",
-	description: "Eduardo Silva's portfolio showcasing game development, AI, and cybersecurity projects.",
-};
+export const metadata: Metadata = siteMetadata;
 
 export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
-	return (
-		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
-				{children}
-			</body>
-		</html>
-	);
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
+      <body className={inter.className}>
+        <GoogleAnalytics />
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  );
 }
-
-
-
