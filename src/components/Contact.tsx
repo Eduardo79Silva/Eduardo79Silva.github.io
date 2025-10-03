@@ -1,25 +1,30 @@
 import React from "react";
+import { trackSocialClick } from "@/lib/analytics";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-20 bg-bg-secondary text-white text-center px-4"
+      className="py-20 bg-bg-secondary text-text-primary text-center px-4"
     >
       <div className="container mx-auto max-w-3xl">
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
           Let&apos;s Connect
         </h2>
-        <p className="text-gray-400 mb-12 text-lg">
+        <p className="text-text-secondary mb-12 text-lg">
           Open for collaborations, opportunities, and exciting projects
         </p>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <a href="mailto:eduardo4silva@gmail.com" className="group">
-            <div className="bg-[#2a2f3f] p-8 rounded-2xl hover:bg-[#ff6b4a] transition-all transform hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 bg-[#ff6b4a] group-hover:bg-white rounded-full flex items-center justify-center">
+          <a
+            href="mailto:eduardo4silva@gmail.com"
+            onClick={() => trackSocialClick("Email")}
+            className="group"
+          >
+            <div className="bg-bg-card p-8 rounded-2xl hover:bg-accent transition-all transform hover:scale-105">
+              <div className="w-16 h-16 mx-auto mb-4 bg-accent group-hover:bg-bg-primary rounded-full flex items-center justify-center">
                 <svg
-                  className="w-8 h-8 text-white group-hover:text-[#ff6b4a]"
+                  className="w-8 h-8 text-text-primary group-hover:text-accent"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -33,7 +38,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">Email</h3>
-              <p className="text-gray-400 group-hover:text-white text-sm break-words">
+              <p className="text-text-secondary group-hover:text-text-primary text-sm break-words">
                 eduardo4silva@gmail.com
               </p>
             </div>
@@ -43,12 +48,13 @@ export default function Contact() {
             href="https://www.linkedin.com/in/eduardo79silva/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackSocialClick("LinkedIn")}
             className="group"
           >
-            <div className="bg-[#2a2f3f] p-8 rounded-2xl hover:bg-[#ff6b4a] transition-all transform hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 bg-[#ff6b4a] group-hover:bg-white rounded-full flex items-center justify-center">
+            <div className="bg-bg-card p-8 rounded-2xl hover:bg-accent transition-all transform hover:scale-105">
+              <div className="w-16 h-16 mx-auto mb-4 bg-accent group-hover:bg-bg-primary rounded-full flex items-center justify-center">
                 <svg
-                  className="w-8 h-8 text-white group-hover:text-[#ff6b4a]"
+                  className="w-8 h-8 text-text-primary group-hover:text-accent"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -56,7 +62,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">LinkedIn</h3>
-              <p className="text-gray-400 group-hover:text-white text-sm">
+              <p className="text-text-secondary group-hover:text-text-primary text-sm">
                 eduardo79silva
               </p>
             </div>
@@ -66,12 +72,13 @@ export default function Contact() {
             href="https://github.com/eduardo79silva"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackSocialClick("GitHub")}
             className="group"
           >
-            <div className="bg-[#2a2f3f] p-8 rounded-2xl hover:bg-[#ff6b4a] transition-all transform hover:scale-105">
-              <div className="w-16 h-16 mx-auto mb-4 bg-[#ff6b4a] group-hover:bg-white rounded-full flex items-center justify-center">
+            <div className="bg-bg-card p-8 rounded-2xl hover:bg-accent transition-all transform hover:scale-105">
+              <div className="w-16 h-16 mx-auto mb-4 bg-accent group-hover:bg-bg-primary rounded-full flex items-center justify-center">
                 <svg
-                  className="w-8 h-8 text-white group-hover:text-[#ff6b4a]"
+                  className="w-8 h-8 text-text-primary group-hover:text-accent"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -79,7 +86,7 @@ export default function Contact() {
                 </svg>
               </div>
               <h3 className="font-bold text-xl mb-2">GitHub</h3>
-              <p className="text-gray-400 group-hover:text-white text-sm">
+              <p className="text-text-secondary group-hover:text-text-primary text-sm">
                 eduardo79silva
               </p>
             </div>

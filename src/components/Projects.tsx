@@ -86,7 +86,7 @@ export default function Projects() {
 
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="bg-bg-card rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl">
+    <div className="bg-bg-card rounded-2xl overflow-hidden shadow-lg transition transform hover:scale-105 hover:shadow-2xl flex flex-col h-full">
       <div className="relative h-48">
         <ImageWithLoader
           src={project.image}
@@ -95,12 +95,12 @@ function ProjectCard({ project }: { project: Project }) {
           className="object-cover"
         />
       </div>
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-3">{project.title}</h3>
-        <p className="text-text-secondary text-sm mb-4 min-h-[60px]">
+        <p className="text-text-secondary text-sm mb-4">
           {project.description}
         </p>
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           {renderProjectLinks(project.links, project.title, false)}
         </div>
       </div>
