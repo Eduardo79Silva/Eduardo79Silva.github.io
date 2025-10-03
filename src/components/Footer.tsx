@@ -13,7 +13,7 @@ export default function Footer() {
             <span className="font-bold">Eduardo Silva</span>
           </div>
           <p className="text-text-secondary text-sm">
-            &copy; 2024 Eduardo Silva | All Rights Reserved
+            &copy; 2025 Eduardo Silva | All Rights Reserved
           </p>
           <div className="flex gap-4">
             <a

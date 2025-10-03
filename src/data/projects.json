@@ -9,6 +9,15 @@
     "featured": true
   },
   {
+    "title": "Majin - Game Engine",
+    "description": "Modern 3D game engine built in C++23 with Vulkan, designed for high-performance rendering and indie game development.",
+    "image": "/images/hello-triangle.png",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/Majin"
+    },
+    "featured": false
+  },
+  {
     "title": "Turbo Soccer",
     "description": "A local-multiplayer car-soccer game built in Unity, where players score goals in a FEUP-themed arena by navigating obstacles and collecting power-ups.",
     "image": "/images/rocket_clone.png",
