@@ -60,6 +60,15 @@
     }
   },
   {
+    "title": "Chess Engine Challenge",
+    "description": "A compact chess engine for Sebastian Lague's Chess Coding Challenge. Implements negamax search with alpha-beta pruning, transposition tables, and PeSTO evaluation within a 1024 token limit.",
+    "image": "/images/chess-challenge.jpg",
+    "links": {
+      "github": "https://github.com/Eduardo79Silva/Chess-Engine-Challenge"
+    }
+  },
+
+  {
     "title": "Cannon Clash",
     "description": "A Unity-built Local-Coop game made for a GameJam over a weekend. Cannon islands fight to the death!",
     "image": "/images/cannon_clash.jpg",
