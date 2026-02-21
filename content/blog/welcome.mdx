@@ -1,0 +1,114 @@
+---
+title: "Welcome to My Neurotechnology Journey"
+description: "An introduction to my transition from software engineering to brain-computer interfaces and the technical blog documenting my learning process."
+date: "2026-02-15"
+tags: ["neurotechnology", "bci", "introduction"]
+keywords: ["brain-computer interface", "neurotechnology", "career transition", "computational neuroscience"]
+published: true
+featured: true
+---
+
+After years building real-time AI systems and graphics engines, I'm making a deliberate transition into neurotechnology and brain-computer interfaces. This blog will document my journey—from foundational coursework to hands-on BCI projects.
+
+## Why Neurotechnology?
+
+After reaching a point where I wanted to use my abilities to create lasting impact rather than just commercial success, I discovered the groundbreaking work at **Science Corp**—restoring vision to the blind through cortical implants. Combined with my fascination for the human brain, I realized neurotechnology represents the perfect convergence of meaningful impact and technical challenge.
+
+I'm particularly interested in:
+
+- **Closed-loop neural implants** for treatment-resistant depression
+- **Communication systems** for locked-in patients  
+- **Cortical visual prosthetics** like Science Corp's pioneering work
+- **Computational neuroscience** of cognition and decision-making
+
+## What I'm Learning
+
+My preparation involves systematic skill-building across multiple domains:
+
+### Computational Neuroscience
+Understanding how neurons encode and decode information, from spike trains to population coding and neural dynamics.
+
+### Signal Processing  
+Real-time filtering, artifact removal, and feature extraction from noisy EEG/LFP data—essential for robust BCI systems.
+
+### Machine Learning for Neural Data
+Classification algorithms optimized for the unique characteristics of neural signals, including motor imagery and P300 detection.
+
+## Example: Basic EEG Preprocessing
+
+Here's how you might filter motor imagery EEG data in Python using MNE:
+
+```python
+import mne
+from scipy import signal
+
+def bandpass_filter(raw, l_freq=8, h_freq=30):
+    """
+    Apply bandpass filter for motor imagery (mu/beta bands)
+    
+    Parameters:
+    - raw: MNE Raw object
+    - l_freq: Lower frequency bound (Hz)  
+    - h_freq: Upper frequency bound (Hz)
+    """
+    return raw.filter(l_freq, h_freq, fir_design='firwin')
+
+def apply_car(raw):
+    """Remove common noise across channels"""
+    return raw.set_eeg_reference('average', projection=True)
+
+def preprocess_motor_imagery(raw):
+    """Complete preprocessing pipeline"""
+    # Bandpass filter
+    raw_filtered = bandpass_filter(raw)
+    
+    # Common Average Reference
+    raw_clean = apply_car(raw_filtered)
+    
+    return raw_clean
+```
+
+## Mathematical Foundations
+
+The **Information Transfer Rate** (ITR) for a BCI system measures how much information can be communicated per unit time:
+
+$$
+ITR = \log_2(N) + P \log_2(P) + (1-P) \log_2\left(\frac{1-P}{N-1}\right) \times \frac{60}{T}
+$$
+
+Where:
+- $N$ = number of possible selections
+- $P$ = accuracy (0-1)
+- $T$ = time per selection (seconds)
+
+For example, a P300 speller with:
+- 36 characters ($N = 36$)
+- 85% accuracy ($P = 0.85$)
+- 5 seconds per selection ($T = 5$)
+
+Achieves: **ITR ≈ 17 bits/minute**
+
+## What's Coming Next
+
+Follow along as I build and document:
+
+1. **Motor Imagery BCI Classifier** - EEG-based control using Common Spatial Patterns
+2. **P300 Speller System** - Communication interface for assistive technology
+3. **Real-time Neural Decoder** - Kalman filters for movement prediction
+4. **Signal Quality Assessment** - Automated EEG data quality tools
+
+Each project will have detailed technical posts explaining the neuroscience background, algorithmic approaches, and engineering challenges encountered.
+
+## The Goal
+
+My immediate goal is to gain admission to **ETH Zürich's Biomedical Engineering Master's program**, where I can formalize this transition and contribute to cutting-edge BCI research. 
+
+Long-term, I want to work on clinical-grade brain-computer interfaces that make real differences in patients' lives—whether that's restoring communication, treating depression, or giving vision back to the blind.
+
+---
+
+*This is the beginning of a systematic transition. Every line of code, every paper read, every concept learned brings me closer to contributing to the future of brain-computer interfaces.*
+
+**Let's build something meaningful together.** 
+
+→ [Get in touch](/#contact) if you're working on neurotechnology or have insights to share.

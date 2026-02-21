@@ -21,6 +21,11 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+          crossOrigin="anonymous"
+        />
       </head>
       <body className={inter.className}>
         <GoogleAnalytics />
