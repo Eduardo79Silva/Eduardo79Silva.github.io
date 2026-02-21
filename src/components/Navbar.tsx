@@ -48,6 +48,9 @@ export default function Navbar() {
           <a href="#projects" className="hover:text-accent transition-colors">
             Projects
           </a>
+          <a href="/blog" className="hover:text-accent transition-colors">
+            Blog
+          </a>
           <a href="#about" className="hover:text-accent transition-colors">
             About
           </a>
