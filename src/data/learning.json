@@ -1,0 +1,146 @@
+{
+  "courses": [
+    {
+      "title": "Fundamentals of Neuroscience",
+      "provider": "HarvardX",
+      "platform": "edX",
+      "status": "in-progress",
+      "expectedCompletion": "2026-03-07",
+      "certificateUrl": "",
+      "skills": [
+        "Resting Potential",
+        "Passive Membrane Properties",
+        "Action Potential",
+        "Action Potential Propagation"
+      ],
+      "description": "Electrical properties in individual neurons, building up a foundation for understanding the fundamental function of the nervous system."
+    },
+    {
+      "title": "Computational Neuroscience",
+      "provider": "University of Washington",
+      "platform": "Coursera",
+      "status": "planned",
+      "expectedCompletion": "2026-03-07",
+      "certificateUrl": "",
+      "skills": [
+        "Neural encoding",
+        "Spike trains",
+        "Neural models",
+        "Population coding"
+      ],
+      "description": "Foundation in how neurons encode and process information, from single neuron dynamics to population-level computation"
+    },
+    {
+      "title": "Brain-Computer Interfaces",
+      "provider": "KAIST",
+      "platform": "Coursera",
+      "status": "planned",
+      "expectedCompletion": "2026-04-15",
+      "certificateUrl": "",
+      "skills": [
+        "P300",
+        "Motor Imagery",
+        "SSVEP",
+        "BCI paradigms",
+        "Signal acquisition"
+      ],
+      "description": "Comprehensive overview of BCI systems, paradigms, and applications from engineering perspective"
+    },
+    {
+      "title": "Digital Signal Processing",
+      "provider": "EPFL",
+      "platform": "Coursera",
+      "status": "planned",
+      "expectedCompletion": "2026-05-30",
+      "certificateUrl": "",
+      "skills": [
+        "Fourier analysis",
+        "Filter design",
+        "Spectral analysis",
+        "Time-frequency methods"
+      ],
+      "description": "Mathematical foundations of DSP with applications to biomedical signals"
+    },
+    {
+      "title": "Medical Neuroscience",
+      "provider": "Duke University",
+      "platform": "Coursera",
+      "status": "planned",
+      "expectedCompletion": "2026-07-15",
+      "certificateUrl": "",
+      "skills": [
+        "Neuroanatomy",
+        "Systems neuroscience",
+        "Sensory systems",
+        "Motor systems"
+      ],
+      "description": "Clinical and anatomical foundations of neuroscience from medical perspective"
+    }
+  ],
+  "researchInterests": [
+    {
+      "title": "Closed-Loop Neural Implants",
+      "description": "Adaptive neurostimulation systems for treatment-resistant depression and other psychiatric conditions",
+      "keywords": [
+        "Closed-loop control",
+        "Neuromodulation",
+        "Depression treatment",
+        "Adaptive algorithms"
+      ],
+      "icon": "brain"
+    },
+    {
+      "title": "Communication BCIs for Locked-In Patients",
+      "description": "Real-time decoding systems enabling communication for individuals with complete paralysis",
+      "keywords": [
+        "P300 Speller",
+        "Motor Imagery",
+        "AAC Systems",
+        "Clinical Translation"
+      ],
+      "icon": "signal"
+    },
+    {
+      "title": "Cortical Visual Prosthetics",
+      "description": "Restoring functional vision through direct cortical stimulation, inspired by Science Corp's pioneering work",
+      "keywords": [
+        "Visual Prosthetics",
+        "Cortical Stimulation",
+        "Retinal Implants",
+        "Visual Perception"
+      ],
+      "icon": "eye"
+    },
+    {
+      "title": "Computational Neuroscience of Cognition",
+      "description": "Understanding how the brain encodes information, makes decisions, and processes complex cognitive tasks",
+      "keywords": [
+        "Neural Coding",
+        "Decision Making",
+        "Memory",
+        "Consciousness"
+      ],
+      "icon": "network"
+    }
+  ],
+  "papers": [
+    {
+      "title": "Brain-Computer Interfaces: A Review",
+      "authors": "Wolpaw, J. R., et al.",
+      "year": 2002,
+      "journal": "Journal of Clinical Neurophysiology",
+      "status": "reading",
+      "tags": ["BCI Overview", "Foundational"],
+      "notes": "Classic overview of BCI paradigms, applications, and challenges"
+    },
+    {
+      "title": "Optimizing Spatial Filters for Robust EEG Single-Trial Analysis",
+      "authors": "Blankertz, B., et al.",
+      "year": 2008,
+      "journal": "IEEE Signal Processing Magazine",
+      "status": "planned",
+      "tags": ["CSP", "Motor Imagery", "Feature Extraction"],
+      "notes": "Foundational paper on Common Spatial Patterns for motor imagery BCI"
+    }
+  ]
+}

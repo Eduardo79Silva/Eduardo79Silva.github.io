@@ -1,87 +1,46 @@
 [
   {
     "title": "Raytracing Engine",
-    "description": "A Vulkan-based raytracing engine supporting emissive materials and a denoiser. This project serves a research and for further integration with my game engine. Will still implement meshes calculations and importance sampling.",
+    "description": "Vulkan-based raytracing engine demonstrating real-time signal processing and performance optimization—skills directly applicable to latency-critical BCI systems. Features GPU-accelerated computation and noise reduction algorithms essential for neural signal processing.",
     "image": "/images/raytracing.png",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Hikari-RayTracer"
     },
-    "featured": true
+    "featured": true,
+    "category": "foundation",
+    "tags": ["Real-time Systems", "GPU Computing", "Performance Optimization"]
   },
   {
     "title": "Majin - Game Engine",
-    "description": "Modern 3D game engine built in C++23 with Vulkan, designed for high-performance rendering and indie game development.",
+    "description": "Modern 3D engine built in C++23 demonstrating systems architecture, real-time constraints, and cross-platform development—foundational skills for building robust BCI software that must run reliably in clinical environments.",
     "image": "/images/hello-triangle.png",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Majin"
     },
-    "featured": false
+    "featured": false,
+    "category": "foundation",
+    "tags": ["Systems Architecture", "C++", "Real-time"]
   },
   {
-    "title": "Turbo Soccer",
-    "description": "A local-multiplayer car-soccer game built in Unity, where players score goals in a FEUP-themed arena by navigating obstacles and collecting power-ups.",
-    "image": "/images/rocket_clone.png",
-    "links": {
-      "github": "https://github.com/Eduardo79Silva/Turbo-Soccer",
-      "itch": "https://afonsomm.itch.io/feup-turbo-soccer"
-    }
-  },
-  {
-    "title": "DeepMine - A Strategic Mining Game",
-    "description": "A strategic 2D mining game where unstable terrain and chain-reaction collapses make every dig decision critical. Built in 72 hours for Ludum Dare 57 using Unity, featuring grid-based systems, physics-driven gameplay, and a risk-reward ore economy.",
-    "image": "/images/ld57.png",
-    "links": {
-      "github": "https://github.com/Eduardo79Silva/LD57",
-      "itch": "https://eduardo79silva.itch.io/deepmine"
-    }
-  },
-  {
-    "title": "Egg Retrieval Game",
-    "description": "WebGL bird game where the player retrieves eggs and returns them to the nest, featuring custom terrain, trees, textures, and interactive gameplay.",
-    "image": "/images/egg_game.png",
-    "links": {
-      "github": "https://github.com/Eduardo79Silva/bird-game/"
-    }
-  },
-  {
-    "title": "TurboThree Racing Game",
-    "description": "3D graphics and game development projects with Three.js, featuring object modeling, procedural generation, particle systems, and interactive UIs",
-    "image": "/images/car_racing.png",
-    "links": {
-      "github": "https://github.com/Eduardo79Silva/racing-game"
-    }
-  },
-  {
-    "title": "Graphics Engine",
-    "description": "Implemented using Three.js, this engine features bump map textures and video textures. It supports wireframe view, buffer geometry with color gradients, and custom cameras in a shooting range scene.",
-    "image": "/images/graphics_engine.png",
-    "links": {
-      "github": "https://github.com/Eduardo79Silva/racing-game/"
-    }
-  },
-  {
-    "title": "Chess Engine Challenge",
-    "description": "A compact chess engine for Sebastian Lague's Chess Coding Challenge. Implements negamax search with alpha-beta pruning, transposition tables, and PeSTO evaluation within a 1024 token limit.",
+    "title": "Chess Engine",
+    "description": "Decision-making system under strict resource constraints (1024 tokens). Demonstrates optimization techniques and algorithmic efficiency relevant to embedded BCI systems with limited computational resources and power budgets.",
     "image": "/images/chess-challenge.jpg",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Chess-Engine-Challenge"
-    }
-  },
-
-  {
-    "title": "Cannon Clash",
-    "description": "A Unity-built Local-Coop game made for a GameJam over a weekend. Cannon islands fight to the death!",
-    "image": "/images/cannon_clash.jpg",
-    "links": {
-      "itch": "https://eduardo79silva.itch.io/cannon-clash"
-    }
+    },
+    "featured": false,
+    "category": "foundation",
+    "tags": ["Optimization", "Algorithms", "Constraints"]
   },
   {
     "title": "FEP Chatbot",
-    "description": "A scalable AI-powered chatbot for a Portuguese university, built with TypeScript and Python. Leveraged Azure OpenAI to provide the LLM capacity for the chatbot. The chatbot was deployed on premises with a custom made deployment pipeline.",
+    "description": "Production ML system demonstrating deployment, monitoring, and reliability—essential skills for clinical BCI applications. Azure OpenAI integration shows experience with ML infrastructure at scale, critical for real-world neurotechnology deployment.",
     "image": "/images/chatbot.png",
     "links": {
       "website": "https://youtu.be/Qx2BIe12lSY"
-    }
+    },
+    "featured": false,
+    "category": "foundation",
+    "tags": ["ML Deployment", "Production Systems", "Azure"]
   }
 ]

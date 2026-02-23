@@ -12,22 +12,16 @@ import Certifications from "../components/Certifications";
 import YouTubeSection from "../components/YoutubeSection";
 import Contact from "../components/Contact";
 import About from "@/components/About";
+import LearningJourney from "@/components/LearningJourney";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col">
-      <Head>
-        <title>Eduardo Silva | Portfolio</title>
-        <meta
-          name="description"
-          content="Eduardo Silva's portfolio showcasing game development, AI, and cybersecurity projects."
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
       <Navbar />
       <main className="flex-1">
         <Hero />
         <Projects />
+        <LearningJourney />
         <About />
         <Experience />
         <ExtraCurricular />
