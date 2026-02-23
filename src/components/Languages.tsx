@@ -18,7 +18,7 @@ export default function Languages() {
           ].map(({ language, level }) => (
             <div
               key={language}
-              className="px-6 py-3 bg-[#2a2f3f] hover:bg-[#ff6b4a] rounded-full text-sm md:text-base transition-all transform hover:scale-105"
+              className="px-6 py-3 bg-bg-card hover:bg-accent rounded-full text-sm md:text-base transition-all transform hover:scale-105"
             >
               <strong>{language}:</strong> {level}
             </div>
