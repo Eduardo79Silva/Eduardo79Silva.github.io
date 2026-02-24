@@ -23,10 +23,13 @@ interface Project {
   tags?: string[];
 }
 
+// Cast the imported JSON to Project array
+const projects = projectsData as Project[];
+
 export default function Projects() {
-  const featuredProject = projectsData.find((p: Project) => p.featured);
-  const neurotechProjects = projectsData.filter((p: Project) => p.category === "neurotechnology");
-  const foundationProjects = projectsData.filter((p: Project) => p.category === "foundation" && !p.featured);
+  const featuredProject = projects.find((p) => p.featured);
+  const neurotechProjects = projects.filter((p) => p.category === "neurotechnology");
+  const foundationProjects = projects.filter((p) => p.category === "foundation" && !p.featured);
 
   return (
     <section
@@ -93,7 +96,7 @@ export default function Projects() {
           
           {neurotechProjects.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {neurotechProjects.map((project: Project, index: number) => (
+              {neurotechProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
             </div>
@@ -130,7 +133,7 @@ export default function Projects() {
             in areas critical for robust, clinical-grade BCI systems.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {foundationProjects.map((project: Project, index: number) => (
+            {foundationProjects.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
           </div>
