@@ -5,7 +5,6 @@ import projectsData from "@/data/projects.json";
 import ImageWithLoader from "@/components/ImageWithLoader";
 import { trackProjectClick } from "@/lib/analytics";
 import { SiGithub, SiItchdotio } from "react-icons/si";
-import { Brain, Clock, Wrench } from "lucide-react";
 
 interface ProjectLinks {
   github?: string;
@@ -23,13 +22,16 @@ interface Project {
   tags?: string[];
 }
 
-// Cast the imported JSON to Project array
 const projects = projectsData as Project[];
 
 export default function Projects() {
   const featuredProject = projects.find((p) => p.featured);
-  const neurotechProjects = projects.filter((p) => p.category === "neurotechnology");
-  const foundationProjects = projects.filter((p) => p.category === "foundation" && !p.featured);
+  const neurotechProjects = projects.filter(
+    (p) => p.category === "neurotechnology",
+  );
+  const foundationProjects = projects.filter(
+    (p) => p.category === "foundation" && !p.featured,
+  );
 
   return (
     <section
@@ -41,10 +43,9 @@ export default function Projects() {
           Featured Work
         </h2>
         <p className="text-text-secondary text-center mb-12">
-          Building the future of brain-computer interfaces
+          Production ML systems and high-performance engineering projects
         </p>
 
-        {/* Featured Project */}
         {featuredProject && (
           <div className="mb-16">
             <div className="bg-bg-card rounded-3xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
@@ -81,56 +82,23 @@ export default function Projects() {
           </div>
         )}
 
-        {/* Neurotechnology Projects Section */}
-        <div className="mb-16">
-          <div className="flex items-center gap-3 mb-6">
-            <Brain className="w-8 h-8 text-accent" />
-            <h3 className="text-3xl font-bold">Neurotechnology & Brain-Computer Interfaces</h3>
-          </div>
-          <p className="text-text-secondary mb-8 max-w-3xl">
-            Building end-to-end BCI systems as I transition into neurotechnology. 
-            Projects added as I complete my learning roadmap—each demonstrating practical 
-            application of computational neuroscience, signal processing, and machine learning 
-            for neural data.
-          </p>
-          
-          {neurotechProjects.length > 0 ? (
+        {neurotechProjects.length > 0 && (
+          <div className="mb-16">
+            <h3 className="text-3xl font-bold mb-6">Signal Processing & ML</h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {neurotechProjects.map((project, index) => (
                 <ProjectCard key={index} project={project} />
               ))}
             </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <ComingSoonCard
-                icon={<Brain />}
-                title="Motor Imagery BCI Classifier"
-                description="EEG-based brain-computer interface using Common Spatial Patterns and machine learning for motor imagery classification. Real-time signal processing pipeline with artifact rejection."
-                status="Planning - March 2026"
-              />
-              <ComingSoonCard
-                icon={<Clock />}
-                title="P300 Speller System"
-                description="Event-related potential detection for assistive communication. Implements row-column paradigm with ensemble classification for robust character selection."
-                status="Planning - April 2026"
-              />
-              <ComingSoonCard
-                icon={<Wrench />}
-                title="Signal Quality Assessment"
-                description="Automated EEG quality checker with SNR estimation, artifact detection, and channel quality scoring. Generates detailed reports for preprocessing guidance."
-                status="Planning - May 2026"
-              />
-            </div>
-          )}
-        </div>
+          </div>
+        )}
 
-        {/* Technical Foundation Section */}
         <div>
-          <h3 className="text-3xl font-bold mb-6">Technical Foundation</h3>
+          <h3 className="text-3xl font-bold mb-6">Systems & Engineering</h3>
           <p className="text-text-secondary mb-8 max-w-3xl">
-            Real-time systems, machine learning, and performance optimization projects demonstrating 
-            the computational skills I'm applying to neurotechnology. Each project builds expertise 
-            in areas critical for robust, clinical-grade BCI systems.
+            Real-time systems, performance optimization, and applied ML projects
+            demonstrating depth across the stack — from GPU pipelines to
+            cloud-deployed AI.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {foundationProjects.map((project, index) => (
@@ -174,33 +142,6 @@ function ProjectCard({ project }: { project: Project }) {
         <div className="flex gap-3 mt-auto">
           {renderProjectLinks(project.links, project.title, false)}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function ComingSoonCard({
-  icon,
-  title,
-  description,
-  status,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  status: string;
-}) {
-  return (
-    <div className="bg-bg-card rounded-2xl p-6 border-2 border-dashed border-accent/30 flex flex-col h-full">
-      <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mb-4 text-accent text-3xl">
-        {icon}
-      </div>
-      <h3 className="text-xl font-bold mb-3">{title}</h3>
-      <p className="text-text-secondary text-sm mb-4 flex-grow">{description}</p>
-      <div className="mt-auto">
-        <span className="inline-block px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
-          {status}
-        </span>
       </div>
     </div>
   );

@@ -1,46 +1,46 @@
 [
   {
     "title": "Raytracing Engine",
-    "description": "Vulkan-based raytracing engine demonstrating real-time signal processing and performance optimization—skills directly applicable to latency-critical BCI systems. Features GPU-accelerated computation and noise reduction algorithms essential for neural signal processing.",
+    "description": "Vulkan-based raytracing engine built in C++23. Implements GPU-accelerated path tracing with custom denoising, physical device selection, memory management, and SPIR-V shader compilation. Demonstrates real-time rendering pipeline architecture and compute performance optimization.",
     "image": "/images/raytracing.png",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Hikari-RayTracer"
     },
     "featured": true,
     "category": "foundation",
-    "tags": ["Real-time Systems", "GPU Computing", "Performance Optimization"]
+    "tags": ["C++23", "Vulkan", "GPU Computing", "Real-time Systems"]
   },
   {
     "title": "Majin - Game Engine",
-    "description": "Modern 3D engine built in C++23 demonstrating systems architecture, real-time constraints, and cross-platform development—foundational skills for building robust BCI software that must run reliably in clinical environments.",
+    "description": "Modern 3D engine in C++23 with Vulkan. Covers full graphics pipeline: physical device selection, swap chain management, command buffer synchronization, render passes, push constants, and a 2D physics simulation with gravitational field visualization.",
     "image": "/images/hello-triangle.png",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Majin"
     },
     "featured": false,
     "category": "foundation",
-    "tags": ["Systems Architecture", "C++", "Real-time"]
+    "tags": ["C++23", "Vulkan", "Systems Architecture", "Physics Simulation"]
   },
   {
     "title": "Chess Engine",
-    "description": "Decision-making system under strict resource constraints (1024 tokens). Demonstrates optimization techniques and algorithmic efficiency relevant to embedded BCI systems with limited computational resources and power budgets.",
+    "description": "Compact chess engine for Sebastian Lague's Chess Coding Challenge. Implements negamax search with alpha-beta pruning, transposition tables, and PeSTO evaluation within strict resource constraints (1024 tokens). Demonstrates algorithmic optimization under tight budgets.",
     "image": "/images/chess-challenge.jpg",
     "links": {
       "github": "https://github.com/Eduardo79Silva/Chess-Engine-Challenge"
     },
     "featured": false,
     "category": "foundation",
-    "tags": ["Optimization", "Algorithms", "Constraints"]
+    "tags": ["Algorithms", "Search Optimization", "Constraints"]
   },
   {
-    "title": "FEP Chatbot",
-    "description": "Production ML system demonstrating deployment, monitoring, and reliability—essential skills for clinical BCI applications. Azure OpenAI integration shows experience with ML infrastructure at scale, critical for real-world neurotechnology deployment.",
+    "title": "FEP University Chatbot",
+    "description": "Production AI chatbot for a Portuguese university. Built with TypeScript and Python, Azure OpenAI for LLM inference, custom deployment pipeline, and monitoring. Demonstrates end-to-end ML system delivery from architecture to production.",
     "image": "/images/chatbot.png",
     "links": {
       "website": "https://youtu.be/Qx2BIe12lSY"
     },
     "featured": false,
     "category": "foundation",
-    "tags": ["ML Deployment", "Production Systems", "Azure"]
+    "tags": ["LLM", "Azure OpenAI", "Production ML", "TypeScript"]
   }
 ]

@@ -1,19 +1,21 @@
 import { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
-  title: "Eduardo Silva | AI Software Engineer & Graphics Developer",
+  title: "Eduardo Silva | ML Engineer & Systems Developer",
   description:
-    "Portfolio of Eduardo Silva - AI Software Engineer specializing in graphics programming, game development, and real-time rendering with Unity, Vulkan, and WebGL.",
+    "Portfolio of Eduardo Silva — ML Engineer specializing in production AI systems, LLM pipelines, and high-performance software. Experience with Vulkan, C++, Python, Azure, and AWS.",
   keywords: [
     "Eduardo Silva",
-    "AI Engineer",
-    "Game Developer",
-    "Graphics Programming",
+    "ML Engineer",
+    "Machine Learning",
+    "AI Systems",
+    "LLM",
+    "RAG",
     "Vulkan",
-    "Unity",
-    "WebGL",
-    "Ray Tracing",
+    "C++",
+    "Python",
     "Software Engineer",
+    "Signal Processing",
   ],
   authors: [{ name: "Eduardo Silva" }],
   creator: "Eduardo Silva",
@@ -23,9 +25,9 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     url: "https://eduardo79silva.github.io/",
     siteName: "Eduardo Silva Portfolio",
-    title: "Eduardo Silva | AI Software Engineer & Graphics Developer",
+    title: "Eduardo Silva | ML Engineer & Systems Developer",
     description:
-      "Portfolio showcasing AI, graphics programming, and game development projects.",
+      "Portfolio showcasing production ML systems, AI engineering, and high-performance software projects.",
     images: [
       {
         url: "/images/og-image.png",
@@ -37,9 +39,9 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eduardo Silva | AI Software Engineer & Graphics Developer",
+    title: "Eduardo Silva | ML Engineer & Systems Developer",
     description:
-      "Portfolio showcasing AI, graphics programming, and game development projects.",
+      "Portfolio showcasing production ML systems, AI engineering, and high-performance software projects.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -64,9 +66,9 @@ export const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Eduardo Silva",
-  jobTitle: "AI Software Engineer",
+  jobTitle: "ML Engineer",
   description:
-    "AI Software Engineer specializing in graphics programming and game development",
+    "ML Engineer specializing in production AI systems and high-performance software",
   url: "https://eduardo79silva.github.io/",
   image: "/images/profile.jpg",
   sameAs: [
@@ -75,13 +77,14 @@ export const structuredData = {
     "https://www.youtube.com/@eduardo-silva-79",
   ],
   knowsAbout: [
+    "Machine Learning",
     "Artificial Intelligence",
-    "Graphics Programming",
-    "Game Development",
+    "LLM Systems",
     "Vulkan",
-    "Unity",
-    "Ray Tracing",
-    "WebGL",
+    "C++",
+    "Python",
+    "Signal Processing",
+    "Systems Programming",
   ],
   alumniOf: {
     "@type": "Organization",
