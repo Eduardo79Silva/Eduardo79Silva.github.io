@@ -6,19 +6,17 @@ import { ArrowLeft } from "lucide-react";
 export const metadata = {
   title: "Blog | Eduardo Silva",
   description:
-    "Technical blog about neurotechnology, brain-computer interfaces, and computational neuroscience.",
+    "Technical blog about ML systems, signal processing, and software engineering.",
 };
 
 export default function BlogPage() {
   const posts = getAllPosts();
   const featuredPosts = posts.filter((post) => post.featured);
-  // const regularPosts = posts.filter((post) => !post.featured);
 
   return (
     <div className="min-h-screen bg-bg-primary pt-20">
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
-          {/* Back to Portfolio Button */}
           <Link
             href="/"
             className="inline-flex items-center gap-2 text-accent hover:text-accent-secondary transition-colors mb-8 group"
@@ -27,14 +25,12 @@ export default function BlogPage() {
             <span>Back to Portfolio</span>
           </Link>
 
-          {/* Header */}
           <h1 className="text-5xl font-bold mb-4 text-text-primary">Blog</h1>
           <p className="text-text-secondary text-xl mb-12">
-            Technical posts about neurotechnology, brain-computer interfaces,
-            and my journey into computational neuroscience.
+            Technical posts about ML systems, signal processing, and software
+            engineering.
           </p>
 
-          {/* Featured Posts */}
           {featuredPosts.length > 0 && (
             <div className="mb-16">
               <h2 className="text-2xl font-bold mb-6 text-text-primary">
@@ -77,7 +73,6 @@ export default function BlogPage() {
             </div>
           )}
 
-          {/* All Posts - Only show non-featured */}
           {posts.length > 0 && (
             <div>
               <h2 className="text-2xl font-bold mb-6 text-text-primary">
@@ -121,12 +116,10 @@ export default function BlogPage() {
             </div>
           )}
 
-          {/* No posts message */}
           {posts.length === 0 && (
             <div className="text-center py-12">
               <p className="text-text-secondary text-lg">
-                No posts yet. Check back soon for technical content about
-                neurotechnology and brain-computer interfaces!
+                No posts yet. Check back soon for technical content!
               </p>
             </div>
           )}

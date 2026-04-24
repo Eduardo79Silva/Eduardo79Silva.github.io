@@ -24,10 +24,11 @@ export default function LearningJourney() {
           Learning Journey
         </h2>
         <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-          Systematically preparing for a transition into neurotechnology and brain-computer interfaces
+          Expanding into signal processing, embedded systems, and computational
+          neuroscience — areas where ML meets hardware and high-stakes
+          real-world constraints
         </p>
 
-        {/* Courses Timeline */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <BookOpen className="w-7 h-7 text-accent" />
@@ -40,11 +41,10 @@ export default function LearningJourney() {
           </div>
         </div>
 
-        {/* Research Interests */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8">Research Interests</h3>
+          <h3 className="text-2xl font-bold mb-8">Technical Interests</h3>
           <p className="text-text-secondary mb-8">
-            Focus areas guiding my transition into neurotechnology and BCI research
+            Areas I'm actively exploring and building towards
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {researchInterests.map((interest, index) => (
@@ -53,11 +53,11 @@ export default function LearningJourney() {
           </div>
         </div>
 
-        {/* Reading List */}
         <div>
           <h3 className="text-2xl font-bold mb-8">Current Reading</h3>
           <p className="text-text-secondary mb-8">
-            Foundational papers and recent research in BCI and computational neuroscience
+            Foundational papers in signal processing, ML systems, and
+            computational neuroscience
           </p>
           <div className="grid gap-4">
             {papers.map((paper, index) => (
@@ -98,9 +98,9 @@ function CourseCard({ course }: { course: any }) {
           {statusLabels[course.status as keyof typeof statusLabels]}
         </span>
       </div>
-      
+
       <p className="text-text-secondary mb-4">{course.description}</p>
-      
+
       <div className="flex flex-wrap gap-2 mb-4">
         {course.skills.map((skill: string, i: number) => (
           <span
@@ -122,7 +122,7 @@ function CourseCard({ course }: { course: any }) {
           View Certificate →
         </a>
       )}
-      
+
       {course.status !== "completed" && (
         <p className="text-text-muted text-sm">
           Expected completion: {course.expectedCompletion}
@@ -183,13 +183,13 @@ function PaperCard({ paper }: { paper: any }) {
           {paper.status}
         </span>
       </div>
-      
+
       {paper.notes && (
         <p className="text-text-secondary text-sm mb-3 group-hover:text-text-primary italic">
           "{paper.notes}"
         </p>
       )}
-      
+
       <div className="flex flex-wrap gap-2">
         {paper.tags.map((tag: string, i: number) => (
           <span
