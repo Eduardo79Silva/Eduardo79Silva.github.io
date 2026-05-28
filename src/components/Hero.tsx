@@ -1,5 +1,5 @@
 import React from "react";
-import { Database, Cpu, Code2, Layers } from "lucide-react";
+import { Cpu, BarChart2, Code2, Layers } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -17,11 +17,18 @@ export default function Hero() {
 
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Eduardo Silva</h1>
           <p className="text-2xl md:text-3xl text-text-secondary mb-3 font-light">
-            ML Engineer & Systems Developer
+            C++ Systems & ML Engineer
           </p>
 
+          <div className="mb-6">
+            <span className="inline-block px-6 py-2 bg-accent/20 border-2 border-accent text-accent rounded-full text-sm font-semibold">
+              Vulkan · GPU Pipelines · Edge AI
+            </span>
+          </div>
+
           <p className="text-lg md:text-xl text-text-muted mb-12 max-w-2xl mx-auto leading-relaxed">
-            Building production AI systems and high-performance software — from cloud-deployed LLM pipelines to low-level GPU rendering engines
+            Real-time rendering, GPU pipelines, and production ML systems.
+            Currently deploying trained models onto STM32.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -66,45 +73,54 @@ export default function Hero() {
       <section className="py-16 bg-bg-secondary">
         <div className="container mx-auto max-w-5xl px-4">
           <h3 className="text-center text-text-muted text-xs uppercase tracking-wider mb-8">
-            Core Expertise
+            Technical Focus
           </h3>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
             <div className="group text-center">
               <div className="w-20 h-20 bg-accent/10 border-2 border-accent rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent group-hover:scale-110 transition-all cursor-pointer">
-                <Database className="w-10 h-10 text-accent group-hover:text-text-primary" />
+                <Layers className="w-10 h-10 text-accent group-hover:text-text-primary" />
               </div>
-              <p className="text-sm font-semibold text-text-primary">AI / ML Systems</p>
-              <p className="text-xs text-text-muted">LLMs • RAG • NLP</p>
-            </div>
-
-            <div className="group text-center">
-              <div className="w-20 h-20 bg-accent/10 border-2 border-accent rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent group-hover:scale-110 transition-all cursor-pointer">
-                <Cpu className="w-10 h-10 text-accent group-hover:text-text-primary" />
-              </div>
-              <p className="text-sm font-semibold text-text-primary">Low-level Systems</p>
-              <p className="text-xs text-text-muted">C++ • Vulkan • GPU</p>
+              <p className="text-sm font-semibold text-text-primary">
+                Real-time Rendering
+              </p>
+              <p className="text-xs text-text-muted">Vulkan · PBR · GPU</p>
             </div>
 
             <div className="group text-center">
               <div className="w-20 h-20 bg-accent/10 border-2 border-accent rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent group-hover:scale-110 transition-all cursor-pointer">
                 <Code2 className="w-10 h-10 text-accent group-hover:text-text-primary" />
               </div>
-              <p className="text-sm font-semibold text-text-primary">Cloud & Deployment</p>
-              <p className="text-xs text-text-muted">Azure • AWS • Python</p>
+              <p className="text-sm font-semibold text-text-primary">
+                Systems Programming
+              </p>
+              <p className="text-xs text-text-muted">C++23 · RAII · Perf</p>
             </div>
 
             <div className="group text-center">
               <div className="w-20 h-20 bg-accent/10 border-2 border-accent rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent group-hover:scale-110 transition-all cursor-pointer">
-                <Layers className="w-10 h-10 text-accent group-hover:text-text-primary" />
+                <BarChart2 className="w-10 h-10 text-accent group-hover:text-text-primary" />
               </div>
-              <p className="text-sm font-semibold text-text-primary">Fullstack</p>
-              <p className="text-xs text-text-muted">TypeScript • React • Next.js</p>
+              <p className="text-sm font-semibold text-text-primary">
+                Production ML
+              </p>
+              <p className="text-xs text-text-muted">
+                Python · PyTorch · Deploy
+              </p>
+            </div>
+
+            <div className="group text-center">
+              <div className="w-20 h-20 bg-accent/10 border-2 border-accent rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:bg-accent group-hover:scale-110 transition-all cursor-pointer">
+                <Cpu className="w-10 h-10 text-accent group-hover:text-text-primary" />
+              </div>
+              <p className="text-sm font-semibold text-text-primary">Edge AI</p>
+              <p className="text-xs text-text-muted">STM32 · TFLite · int8</p>
             </div>
           </div>
 
           <p className="text-center text-text-muted text-sm">
-            Exploring: Signal Processing • Embedded Systems • Computational Neuroscience
+            Foundation: Signal Processing · Computational Neuroscience · BCI
+            Systems
           </p>
         </div>
       </section>

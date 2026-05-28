@@ -13,78 +13,94 @@ export default function About() {
 
         <div className="space-y-8">
           <div className="bg-bg-card rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4 text-accent">Who I Am</h3>
+            <h3 className="text-2xl font-bold mb-4 text-accent">
+              The Engineer
+            </h3>
             <p className="text-text-secondary text-lg leading-relaxed">
-              I'm a software engineer with a strong focus on ML systems and
-              performance-critical software. Over the past two years I've
-              shipped production AI features — RAG pipelines, LLM-powered
-              chatbots, time-series classifiers — while also building low-level
-              systems from scratch, including a Vulkan rendering engine with
-              full GPU memory management, shader compilation, and physics
-              simulation. That combination of applied ML and systems depth is
-              what I care about most and what I keep pushing on.
+              I built a path tracer that implements Monte Carlo light transport
+              correctly — meaning every bug is a physics violation, and you
+              can't hide behind approximations. Before that, a Vulkan engine in
+              C++23 where I hand-wrote the swap chain, command buffer
+              architecture, and RAII device lifetime. On the ML side, I've
+              shipped production systems on real datasets with real users and
+              real failure modes — not Kaggle competitions. I'm now deploying
+              trained models onto STM32 microcontrollers. The through-line is
+              building things where performance and correctness both matter.
             </p>
           </div>
 
           <div className="bg-bg-card rounded-2xl p-8">
-            <h3 className="text-2xl font-bold mb-4 text-accent">
-              What I Build
-            </h3>
-            <p className="text-text-secondary text-lg leading-relaxed mb-4">
-              On the ML side, I've worked on production systems using Azure
-              OpenAI, AWS Lambda pipelines, RAG architectures, and NLP
-              classifiers — all deployed and monitored at scale. I care about
-              making models actually work in production, not just in notebooks.
+            <h3 className="text-2xl font-bold mb-4 text-accent">How I Work</h3>
+            <p className="text-text-secondary text-lg leading-relaxed mb-6">
+              I follow existing patterns rather than introducing abstractions
+              that nobody asked for. I prefer explicit failures over silent
+              exits. I push back when something doesn't make sense. I don't use
+              non-null assertions or type casts to make the compiler stop
+              complaining.
             </p>
-            <p className="text-text-secondary text-lg leading-relaxed">
-              On the systems side, my Vulkan engine covers physical device
-              selection, command buffer synchronization, render passes, push
-              constants, swap chain management, and a 2D physics simulation with
-              gravitational field visualization. Writing this in C++23 gave me a
-              genuine understanding of how software interacts with hardware — an
-              understanding most ML engineers don't have.
-            </p>
+            <ul className="space-y-3 text-text-secondary text-lg">
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-xl mt-1 flex-shrink-0">
+                  →
+                </span>
+                <span>
+                  <strong className="text-text-primary">Languages:</strong>{" "}
+                  C++23 (primary), Python, TypeScript
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-xl mt-1 flex-shrink-0">
+                  →
+                </span>
+                <span>
+                  <strong className="text-text-primary">Graphics:</strong>{" "}
+                  Vulkan, GPU pipelines, PBR, physically-based light transport
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-xl mt-1 flex-shrink-0">
+                  →
+                </span>
+                <span>
+                  <strong className="text-text-primary">ML:</strong> PyTorch,
+                  scikit-learn, production deployment, inference optimization
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-xl mt-1 flex-shrink-0">
+                  →
+                </span>
+                <span>
+                  <strong className="text-text-primary">Embedded ML:</strong>{" "}
+                  STM32, TFLite Micro, X-CUBE-AI, int8 quantization, UART
+                </span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-accent text-xl mt-1 flex-shrink-0">
+                  →
+                </span>
+                <span>
+                  <strong className="text-text-primary">
+                    Signal Processing:
+                  </strong>{" "}
+                  EEG preprocessing, DSP, spiking neural networks
+                </span>
+              </li>
+            </ul>
           </div>
 
           <div className="bg-bg-card rounded-2xl p-8">
             <h3 className="text-2xl font-bold mb-4 text-accent">
-              Where I'm Heading
+              What I'm Looking For
             </h3>
-            <p className="text-text-secondary text-lg leading-relaxed mb-4">
-              I'm deepening my systems knowledge in the direction of signal
-              processing and embedded computing — areas where ML and hardware
-              meet. I'm currently working through EPFL's DSP course and
-              exploring how ML models run at the edge, on constrained hardware.
-              The intersection of efficient inference and resource-limited
-              systems is where I see the most interesting engineering challenges
-              ahead.
-            </p>
             <p className="text-text-secondary text-lg leading-relaxed">
-              On the side, I have a growing interest in computational
-              neuroscience and biomedical signal processing — not as my primary
-              positioning, but as an area I find genuinely fascinating and where
-              the same skills (real-time systems, signal processing, ML) apply
-              in high-stakes contexts.
+              Remote EU roles in graphics engineering, ML systems, or C++
+              systems development. Companies where the codebase has actual
+              performance constraints — rendering, simulation, real-time
+              inference, edge deployment. Not looking for the easiest job;
+              looking for the one where the technical problems are genuinely
+              hard and the bar for correctness is high.
             </p>
-          </div>
-
-          <div className="gradient-accent rounded-2xl p-8 text-center">
-            <h3 className="text-2xl font-bold mb-4 text-text-primary">
-              Currently Open to Opportunities
-            </h3>
-            <p className="text-text-primary text-lg mb-6">
-              Looking for ML engineering or software engineering roles where I
-              can work on technically demanding problems — ideally involving
-              applied AI, performance-critical systems, or both. Remote-first or
-              Switzerland-based.
-            </p>
-            <a
-              href="#contact"
-              className="inline-block px-8 py-4 bg-bg-card text-accent rounded-full
-                         font-bold hover:bg-bg-darker transition-all"
-            >
-              Let's Talk
-            </a>
           </div>
         </div>
       </div>

@@ -1,21 +1,20 @@
 import { Metadata } from "next";
 
 export const siteMetadata: Metadata = {
-  title: "Eduardo Silva | ML Engineer & Systems Developer",
+  title: "Eduardo Silva | C++ Systems & ML Engineer",
   description:
-    "Portfolio of Eduardo Silva — ML Engineer specializing in production AI systems, LLM pipelines, and high-performance software. Experience with Vulkan, C++, Python, Azure, and AWS.",
+    "Portfolio of Eduardo Silva — C++ systems engineer specializing in real-time rendering, Vulkan GPU pipelines, and production ML systems. Currently extending into embedded ML and edge AI.",
   keywords: [
     "Eduardo Silva",
-    "ML Engineer",
-    "Machine Learning",
-    "AI Systems",
-    "LLM",
-    "RAG",
+    "C++ Engineer",
+    "Systems Engineer",
     "Vulkan",
-    "C++",
-    "Python",
-    "Software Engineer",
-    "Signal Processing",
+    "Graphics Engineer",
+    "ML Engineer",
+    "Edge AI",
+    "Embedded ML",
+    "Ray Tracing",
+    "GPU Programming",
   ],
   authors: [{ name: "Eduardo Silva" }],
   creator: "Eduardo Silva",
@@ -25,9 +24,9 @@ export const siteMetadata: Metadata = {
     locale: "en_US",
     url: "https://eduardo79silva.github.io/",
     siteName: "Eduardo Silva Portfolio",
-    title: "Eduardo Silva | ML Engineer & Systems Developer",
+    title: "Eduardo Silva | C++ Systems & ML Engineer",
     description:
-      "Portfolio showcasing production ML systems, AI engineering, and high-performance software projects.",
+      "Portfolio showcasing real-time rendering, Vulkan GPU pipelines, and production ML systems.",
     images: [
       {
         url: "/images/og-image.png",
@@ -39,9 +38,9 @@ export const siteMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Eduardo Silva | ML Engineer & Systems Developer",
+    title: "Eduardo Silva | C++ Systems & ML Engineer",
     description:
-      "Portfolio showcasing production ML systems, AI engineering, and high-performance software projects.",
+      "Portfolio showcasing real-time rendering, Vulkan GPU pipelines, and production ML systems.",
     images: ["/images/og-image.png"],
   },
   robots: {
@@ -66,9 +65,9 @@ export const structuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Eduardo Silva",
-  jobTitle: "ML Engineer",
+  jobTitle: "C++ Systems & ML Engineer",
   description:
-    "ML Engineer specializing in production AI systems and high-performance software",
+    "C++ systems engineer specializing in real-time rendering, Vulkan GPU pipelines, and production ML systems",
   url: "https://eduardo79silva.github.io/",
   image: "/images/profile.jpg",
   sameAs: [
@@ -77,14 +76,14 @@ export const structuredData = {
     "https://www.youtube.com/@eduardo-silva-79",
   ],
   knowsAbout: [
-    "Machine Learning",
-    "Artificial Intelligence",
-    "LLM Systems",
-    "Vulkan",
     "C++",
-    "Python",
+    "Vulkan",
+    "GPU Programming",
+    "Real-time Rendering",
+    "Machine Learning",
+    "Edge AI",
+    "Embedded ML",
     "Signal Processing",
-    "Systems Programming",
   ],
   alumniOf: {
     "@type": "Organization",

@@ -17,7 +17,7 @@ After reaching a point where I wanted to use my abilities to create lasting impa
 I'm particularly interested in:
 
 - **Closed-loop neural implants** for treatment-resistant depression
-- **Communication systems** for locked-in patients  
+- **Communication systems** for locked-in patients
 - **Cortical visual prosthetics** like Science Corp's pioneering work
 - **Computational neuroscience** of cognition and decision-making
 
@@ -28,7 +28,7 @@ My preparation involves systematic skill-building across multiple domains:
 ### Computational Neuroscience
 Understanding how neurons encode and decode information, from spike trains to population coding and neural dynamics.
 
-### Signal Processing  
+### Signal Processing
 Real-time filtering, artifact removal, and feature extraction from noisy EEG/LFP data—essential for robust BCI systems.
 
 ### Machine Learning for Neural Data
@@ -45,10 +45,10 @@ from scipy import signal
 def bandpass_filter(raw, l_freq=8, h_freq=30):
     """
     Apply bandpass filter for motor imagery (mu/beta bands)
-    
+
     Parameters:
     - raw: MNE Raw object
-    - l_freq: Lower frequency bound (Hz)  
+    - l_freq: Lower frequency bound (Hz)
     - h_freq: Upper frequency bound (Hz)
     """
     return raw.filter(l_freq, h_freq, fir_design='firwin')
@@ -61,10 +61,10 @@ def preprocess_motor_imagery(raw):
     """Complete preprocessing pipeline"""
     # Bandpass filter
     raw_filtered = bandpass_filter(raw)
-    
+
     # Common Average Reference
     raw_clean = apply_car(raw_filtered)
-    
+
     return raw_clean
 ```
 
@@ -101,14 +101,10 @@ Each project will have detailed technical posts explaining the neuroscience back
 
 ## The Goal
 
-My immediate goal is to gain admission to **ETH Zürich's Biomedical Engineering Master's program**, where I can formalize this transition and contribute to cutting-edge BCI research. 
-
 Long-term, I want to work on clinical-grade brain-computer interfaces that make real differences in patients' lives—whether that's restoring communication, treating depression, or giving vision back to the blind.
 
 ---
 
-*This is the beginning of a systematic transition. Every line of code, every paper read, every concept learned brings me closer to contributing to the future of brain-computer interfaces.*
-
-**Let's build something meaningful together.** 
+**Let's build something meaningful together.**
 
 → [Get in touch](/#contact) if you're working on neurotechnology or have insights to share.

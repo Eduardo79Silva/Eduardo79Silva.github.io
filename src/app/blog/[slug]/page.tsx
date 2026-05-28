@@ -1,15 +1,15 @@
-import { getPostBySlug, getAllSlugs } from '@/lib/blog';
-import { notFound } from 'next/navigation';
-import { format } from 'date-fns';
-import { MDXRemote } from 'next-mdx-remote/rsc';
-import type { Metadata } from 'next';
-import rehypeKatex from 'rehype-katex';
-import remarkMath from 'remark-math';
-import rehypeSlug from 'rehype-slug';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import remarkGfm from 'remark-gfm';
-import Link from 'next/link';
-import { ArrowLeft, Home } from 'lucide-react';
+import { getPostBySlug, getAllSlugs } from "@/lib/blog";
+import { notFound } from "next/navigation";
+import { format } from "date-fns";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import type { Metadata } from "next";
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+import rehypeSlug from "rehype-slug";
+import rehypeAutolinkHeadings from "rehype-autolink-headings";
+import remarkGfm from "remark-gfm";
+import Link from "next/link";
+import { ArrowLeft, Home } from "lucide-react";
 
 export async function generateStaticParams() {
   const slugs = getAllSlugs();
@@ -17,10 +17,10 @@ export async function generateStaticParams() {
 }
 
 // Fixed for Next.js 15: params is now a Promise
-export async function generateMetadata({ 
-  params 
-}: { 
-  params: Promise<{ slug: string }> 
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -31,7 +31,7 @@ export async function generateMetadata({
     description: post.description,
     keywords: post.keywords,
     openGraph: {
-      type: 'article',
+      type: "article",
       title: post.title,
       description: post.description,
       publishedTime: post.date,
@@ -42,10 +42,10 @@ export async function generateMetadata({
 }
 
 // Fixed for Next.js 15: params is now a Promise
-export default async function PostPage({ 
-  params 
-}: { 
-  params: Promise<{ slug: string }> 
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const post = getPostBySlug(slug);
@@ -60,14 +60,14 @@ export default async function PostPage({
         <div className="max-w-3xl mx-auto">
           {/* Navigation */}
           <div className="flex items-center justify-between mb-8">
-            <Link 
+            <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-accent hover:text-accent-secondary transition-colors group"
             >
               <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
               <span>All Posts</span>
             </Link>
-            <Link 
+            <Link
               href="/"
               className="inline-flex items-center gap-2 text-text-muted hover:text-accent transition-colors group"
             >
@@ -83,7 +83,7 @@ export default async function PostPage({
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-text-secondary text-sm mb-6">
               <time dateTime={post.date}>
-                {format(new Date(post.date), 'MMMM dd, yyyy')}
+                {format(new Date(post.date), "MMMM dd, yyyy")}
               </time>
               <span>•</span>
               <span>{post.readingTime}</span>
@@ -105,8 +105,9 @@ export default async function PostPage({
           </header>
 
           {/* Content */}
-          <div className="prose prose-lg prose-invert max-w-none 
-                          prose-headings:text-text-primary 
+          <div
+            className="prose prose-lg prose-invert max-w-none
+                          prose-headings:text-text-primary
                           prose-p:text-text-secondary
                           prose-a:text-accent hover:prose-a:text-accent-secondary
                           prose-strong:text-text-primary
@@ -115,7 +116,8 @@ export default async function PostPage({
                           prose-img:rounded-lg
                           prose-ul:text-text-secondary
                           prose-ol:text-text-secondary
-                          prose-li:text-text-secondary">
+                          prose-li:text-text-secondary"
+          >
             <MDXRemote
               source={post.content}
               options={{
@@ -124,7 +126,7 @@ export default async function PostPage({
                   rehypePlugins: [
                     rehypeSlug,
                     rehypeKatex,
-                    [rehypeAutolinkHeadings, { behavior: 'wrap' }],
+                    [rehypeAutolinkHeadings, { behavior: "wrap" }],
                   ],
                 },
               }}
