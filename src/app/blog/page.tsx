@@ -6,7 +6,7 @@ import { ArrowLeft } from "lucide-react";
 export const metadata = {
   title: "Blog | Eduardo Silva",
   description:
-    "Technical blog about ML systems, signal processing, and software engineering.",
+    "Technical writing on C++ systems, real-time rendering, ML engineering, and embedded AI.",
 };
 
 export default function BlogPage() {
@@ -27,8 +27,8 @@ export default function BlogPage() {
 
           <h1 className="text-5xl font-bold mb-4 text-text-primary">Blog</h1>
           <p className="text-text-secondary text-xl mb-12">
-            Technical posts about ML systems, signal processing, and software
-            engineering.
+            Technical posts on systems programming, rendering, ML engineering,
+            and whatever I'm currently breaking.
           </p>
 
           {featuredPosts.length > 0 && (
@@ -119,7 +119,8 @@ export default function BlogPage() {
           {posts.length === 0 && (
             <div className="text-center py-12">
               <p className="text-text-secondary text-lg">
-                No posts yet. Check back soon for technical content!
+                Posts coming soon — on Vulkan pipeline architecture, embedded ML
+                deployment, and production ML lessons.
               </p>
             </div>
           )}

@@ -5,6 +5,7 @@ import projectsData from "@/data/projects.json";
 import ImageWithLoader from "@/components/ImageWithLoader";
 import { trackProjectClick } from "@/lib/analytics";
 import { SiGithub, SiItchdotio } from "react-icons/si";
+import { Cpu } from "lucide-react";
 
 interface ProjectLinks {
   github?: string;
@@ -18,7 +19,7 @@ interface Project {
   image: string;
   links: ProjectLinks;
   featured?: boolean;
-  category?: "neurotechnology" | "foundation";
+  category?: "systems" | "ml" | "embedded" | "neurotech" | "games";
   tags?: string[];
 }
 
@@ -26,12 +27,7 @@ const projects = projectsData as Project[];
 
 export default function Projects() {
   const featuredProject = projects.find((p) => p.featured);
-  const neurotechProjects = projects.filter(
-    (p) => p.category === "neurotechnology",
-  );
-  const foundationProjects = projects.filter(
-    (p) => p.category === "foundation" && !p.featured,
-  );
+  const otherProjects = projects.filter((p) => !p.featured);
 
   return (
     <section
@@ -40,10 +36,10 @@ export default function Projects() {
     >
       <div className="container mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Featured Work
+          Projects
         </h2>
         <p className="text-text-secondary text-center mb-12">
-          Production ML systems and high-performance engineering projects
+          Real-time rendering, ML systems, and embedded AI
         </p>
 
         {featuredProject && (
@@ -69,6 +65,18 @@ export default function Projects() {
                   <p className="text-text-secondary text-lg mb-6">
                     {featuredProject.description}
                   </p>
+                  {featuredProject.tags && featuredProject.tags.length > 0 && (
+                    <div className="flex flex-wrap gap-2 mb-6">
+                      {featuredProject.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2 py-1 bg-bg-primary text-text-muted rounded text-xs"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                   <div className="flex gap-3">
                     {renderProjectLinks(
                       featuredProject.links,
@@ -82,29 +90,30 @@ export default function Projects() {
           </div>
         )}
 
-        {neurotechProjects.length > 0 && (
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold mb-6">Signal Processing & ML</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {neurotechProjects.map((project, index) => (
-                <ProjectCard key={index} project={project} />
-              ))}
-            </div>
-          </div>
-        )}
-
-        <div>
-          <h3 className="text-3xl font-bold mb-6">Systems & Engineering</h3>
-          <p className="text-text-secondary mb-8 max-w-3xl">
-            Real-time systems, performance optimization, and applied ML projects
-            demonstrating depth across the stack — from GPU pipelines to
-            cloud-deployed AI.
-          </p>
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold mb-6">All Projects</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {foundationProjects.map((project, index) => (
+            {otherProjects.map((project, index) => (
               <ProjectCard key={index} project={project} />
             ))}
           </div>
+        </div>
+
+        <div className="bg-bg-card rounded-2xl p-8 border-2 border-dashed border-accent/30 max-w-3xl mx-auto text-center">
+          <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 text-accent">
+            <Cpu className="w-8 h-8" />
+          </div>
+          <h3 className="text-xl font-bold mb-3">
+            STM32 Embedded ML — In Progress
+          </h3>
+          <p className="text-text-secondary mb-4">
+            Deploying a trained ML classifier on STM32 via TFLite Micro and
+            X-CUBE-AI. int8 quantization, UART inference output,
+            memory-constrained deployment.
+          </p>
+          <span className="inline-block px-3 py-1 bg-accent/20 text-accent rounded-full text-xs font-semibold">
+            Expected: August 2025
+          </span>
         </div>
       </div>
     </section>

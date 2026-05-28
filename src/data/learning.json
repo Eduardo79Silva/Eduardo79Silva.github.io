@@ -13,7 +13,7 @@
         "Action Potential",
         "Action Potential Propagation"
       ],
-      "description": "Electrical properties in individual neurons, building up a foundation for understanding the fundamental function of the nervous system."
+      "description": "Electrical properties of individual neurons — foundational for understanding neural signal generation, which underpins EEG and any real-time biosignal processing system."
     },
     {
       "title": "Computational Neuroscience",
@@ -28,7 +28,22 @@
         "Neural models",
         "Population coding"
       ],
-      "description": "Foundation in how neurons encode and process information, from single neuron dynamics to population-level computation"
+      "description": "How neurons encode and process information — from single neuron dynamics to population-level computation. Mathematical modeling of biological systems."
+    },
+    {
+      "title": "Digital Signal Processing",
+      "provider": "EPFL",
+      "platform": "Coursera",
+      "status": "planned",
+      "expectedCompletion": "2026-05-30",
+      "certificateUrl": "",
+      "skills": [
+        "Fourier analysis",
+        "Filter design",
+        "Spectral analysis",
+        "Time-frequency methods"
+      ],
+      "description": "Mathematical foundations of DSP — filter design, spectral analysis, and time-frequency methods. Directly applicable to audio, biosignal, and sensor data processing."
     },
     {
       "title": "Brain-Computer Interfaces",
@@ -44,22 +59,7 @@
         "BCI paradigms",
         "Signal acquisition"
       ],
-      "description": "Comprehensive overview of BCI systems, paradigms, and applications from engineering perspective"
-    },
-    {
-      "title": "Digital Signal Processing",
-      "provider": "EPFL",
-      "platform": "Coursera",
-      "status": "planned",
-      "expectedCompletion": "2026-05-30",
-      "certificateUrl": "",
-      "skills": [
-        "Fourier analysis",
-        "Filter design",
-        "Spectral analysis",
-        "Time-frequency methods"
-      ],
-      "description": "Mathematical foundations of DSP with applications to biomedical signals"
+      "description": "End-to-end BCI systems: signal acquisition, feature extraction, classification, and real-time feedback. Combines DSP, ML, and systems engineering under strict latency constraints."
     },
     {
       "title": "Medical Neuroscience",
@@ -74,53 +74,45 @@
         "Sensory systems",
         "Motor systems"
       ],
-      "description": "Clinical and anatomical foundations of neuroscience from medical perspective"
+      "description": "Clinical and anatomical neuroscience from a medical perspective — context for understanding what biosignal data actually represents in a real nervous system."
     }
   ],
   "researchInterests": [
     {
-      "title": "Closed-Loop Neural Implants",
-      "description": "Adaptive neurostimulation systems for treatment-resistant depression and other psychiatric conditions",
+      "title": "Embedded ML & On-Device Inference",
+      "description": "Deploying trained models under real constraints: STM32, TFLite Micro, X-CUBE-AI, int8 quantization, UART output. Where ML meets hardware and software quality actually matters.",
       "keywords": [
-        "Closed-loop control",
-        "Neuromodulation",
-        "Depression treatment",
-        "Adaptive algorithms"
+        "TFLite Micro",
+        "STM32",
+        "int8 Quantization",
+        "X-CUBE-AI",
+        "UART"
       ],
-      "icon": "brain"
+      "icon": "network"
     },
     {
-      "title": "Communication BCIs for Locked-In Patients",
-      "description": "Real-time decoding systems enabling communication for individuals with complete paralysis",
-      "keywords": [
-        "P300 Speller",
-        "Motor Imagery",
-        "AAC Systems",
-        "Clinical Translation"
-      ],
+      "title": "Real-Time Rendering & GPU Architecture",
+      "description": "Physically-based rendering, Monte Carlo methods, denoising, and Vulkan pipeline architecture. Understanding the GPU as a massively parallel compute platform, not just a graphics card.",
+      "keywords": ["Vulkan", "PBR", "Monte Carlo", "Denoising", "GPU Compute"],
       "icon": "signal"
     },
     {
-      "title": "Cortical Visual Prosthetics",
-      "description": "Restoring functional vision through direct cortical stimulation, inspired by Science Corp's pioneering work",
-      "keywords": [
-        "Visual Prosthetics",
-        "Cortical Stimulation",
-        "Retinal Implants",
-        "Visual Perception"
-      ],
-      "icon": "eye"
+      "title": "Neural Signal Processing",
+      "description": "EEG preprocessing, artifact rejection, spike encoding, and spiking neural network classifiers. The engineering side of neurotechnology — real-time signal pipelines for neural data.",
+      "keywords": ["EEG", "MNE", "Spike Encoding", "SNN", "ICA"],
+      "icon": "brain"
     },
     {
-      "title": "Computational Neuroscience of Cognition",
-      "description": "Understanding how the brain encodes information, makes decisions, and processes complex cognitive tasks",
+      "title": "Production ML Systems",
+      "description": "End-to-end ML beyond Jupyter notebooks: feature engineering, model training, deployment, monitoring, and failure modes. ML that runs in the real world under real conditions.",
       "keywords": [
-        "Neural Coding",
-        "Decision Making",
-        "Memory",
-        "Consciousness"
+        "PyTorch",
+        "scikit-learn",
+        "Deployment",
+        "Monitoring",
+        "Inference"
       ],
-      "icon": "network"
+      "icon": "eye"
     }
   ],
   "papers": [
@@ -130,8 +122,8 @@
       "year": 2002,
       "journal": "Journal of Clinical Neurophysiology",
       "status": "reading",
-      "tags": ["BCI Overview", "Foundational"],
-      "notes": "Classic overview of BCI paradigms, applications, and challenges"
+      "tags": ["BCI", "Survey", "Foundational"],
+      "notes": "Canonical overview of BCI paradigms — useful for understanding the full engineering problem before diving into any one component."
     },
     {
       "title": "Optimizing Spatial Filters for Robust EEG Single-Trial Analysis",
@@ -139,8 +131,8 @@
       "year": 2008,
       "journal": "IEEE Signal Processing Magazine",
       "status": "planned",
-      "tags": ["CSP", "Motor Imagery", "Feature Extraction"],
-      "notes": "Foundational paper on Common Spatial Patterns for motor imagery BCI"
+      "tags": ["CSP", "Motor Imagery", "Signal Processing"],
+      "notes": "Foundational paper on Common Spatial Patterns — the standard feature extraction method for motor imagery classification."
     }
   ]
 }

@@ -21,18 +21,17 @@ export default function LearningJourney() {
     >
       <div className="container mx-auto max-w-6xl">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">
-          Learning Journey
+          Technical Interests
         </h2>
         <p className="text-text-secondary text-center mb-12 max-w-2xl mx-auto">
-          Expanding into signal processing, embedded systems, and computational
-          neuroscience — areas where ML meets hardware and high-stakes
-          real-world constraints
+          What I'm studying, building toward, and curious about. Formal
+          coursework alongside hands-on projects.
         </p>
 
         <div className="mb-16">
           <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
             <BookOpen className="w-7 h-7 text-accent" />
-            Courses & Certifications
+            Coursework
           </h3>
           <div className="space-y-6">
             {courses.map((course, index) => (
@@ -42,9 +41,10 @@ export default function LearningJourney() {
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-bold mb-8">Technical Interests</h3>
+          <h3 className="text-2xl font-bold mb-4">Focus Areas</h3>
           <p className="text-text-secondary mb-8">
-            Areas I'm actively exploring and building towards
+            The technical problems I find genuinely interesting — and am
+            actively building experience in.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {researchInterests.map((interest, index) => (
@@ -54,10 +54,9 @@ export default function LearningJourney() {
         </div>
 
         <div>
-          <h3 className="text-2xl font-bold mb-8">Current Reading</h3>
+          <h3 className="text-2xl font-bold mb-4">Reading List</h3>
           <p className="text-text-secondary mb-8">
-            Foundational papers in signal processing, ML systems, and
-            computational neuroscience
+            Papers worth understanding, not just citing.
           </p>
           <div className="grid gap-4">
             {papers.map((paper, index) => (
@@ -89,7 +88,7 @@ function CourseCard({ course }: { course: any }) {
         <div className="flex-1">
           <h4 className="text-xl font-bold mb-2">{course.title}</h4>
           <p className="text-text-secondary text-sm">
-            {course.provider} • {course.platform}
+            {course.provider} · {course.platform}
           </p>
         </div>
         <span
@@ -125,7 +124,7 @@ function CourseCard({ course }: { course: any }) {
 
       {course.status !== "completed" && (
         <p className="text-text-muted text-sm">
-          Expected completion: {course.expectedCompletion}
+          Expected: {course.expectedCompletion}
         </p>
       )}
     </div>
