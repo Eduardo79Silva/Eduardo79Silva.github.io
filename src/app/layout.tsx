@@ -1,11 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { siteMetadata, structuredData } from "@/lib/metadata";
 import { ThemeProvider } from "@/contexts/ThemeProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = siteMetadata;
 
@@ -21,13 +18,14 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
+          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
           rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-          crossOrigin="anonymous"
         />
       </head>
-      <body className={inter.className}>
+      <body>
         <GoogleAnalytics />
         <ThemeProvider>{children}</ThemeProvider>
       </body>

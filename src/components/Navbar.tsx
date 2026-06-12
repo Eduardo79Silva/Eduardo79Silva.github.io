@@ -1,85 +1,87 @@
 "use client";
 
 import React, { useState } from "react";
-//import { useTheme } from "@/contexts/ThemeProvider";
 import { trackResumeDownload } from "@/lib/analytics";
 
+const links = [
+  { label: "projects", href: "#projects" },
+  { label: "experience", href: "#experience" },
+  { label: "stack", href: "#stack" },
+  { label: "contact", href: "#contact" },
+];
+
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  //const { theme, toggleTheme } = useTheme();
+  const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-bg-primary text-text-primary p-4 fixed w-full top-0 shadow-lg z-50 border-b border-border">
-      <div className="container mx-auto flex justify-between items-center">
-        <a href="#" className="text-xl font-bold flex items-center gap-2">
-          <span>Eduardo Silva</span>
+    <nav
+      style={{ borderBottom: "1px solid var(--border)" }}
+      className="fixed w-full top-0 z-50 bg-bg"
+    >
+      <div className="max-w-4xl mx-auto px-6 h-14 flex items-center justify-between">
+        <a href="#" className="font-mono text-sm text-text tracking-tight">
+          eduardo silva
         </a>
-        <div className="flex items-center gap-4">
-          {/*<button
-            onClick={toggleTheme}
-            className="p-2 rounded-lg bg-bg-card hover:bg-accent transition-colors"
-            style={{ display: "hidden" }}
-            aria-label="Toggle theme"
-          >
-            {theme === "dark" ? "🌞" : "🌙"}
-          </button>*/}
-          <button
-            className="lg:hidden text-text-primary focus:outline-none"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+
+        {/* desktop */}
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              className="font-mono text-xs text-muted hover:text-text transition-colors"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d={isOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"}
-              />
-            </svg>
-          </button>
-        </div>
-        <div
-          className={`lg:flex md:items-center md:space-x-6 ${isOpen ? "block" : "hidden"} absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-bg-primary md:bg-transparent md:flex-row flex flex-col items-center md:space-y-0 space-y-4 p-4 md:p-0`}
-        >
-          <a href="#projects" className="hover:text-accent transition-colors">
-            Projects
-          </a>
-          <a href="/blog" className="hover:text-accent transition-colors">
-            Blog
-          </a>
-          <a href="#about" className="hover:text-accent transition-colors">
-            About
-          </a>
-          <a href="#experience" className="hover:text-accent transition-colors">
-            Experience
-          </a>
-          <a href="#youtube" className="hover:text-accent transition-colors">
-            YouTube
-          </a>
-          <a
-            href="#certifications"
-            className="hover:text-accent transition-colors"
-          >
-            Certifications
-          </a>
-          <a href="#contact" className="hover:text-accent transition-colors">
-            Contact
-          </a>
+              {l.label}
+            </a>
+          ))}
           <a
             href="/files/CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             onClick={trackResumeDownload}
-            className="px-5 py-2 bg-accent hover:bg-accent-secondary rounded-full font-semibold transition-all"
+            style={{ border: "1px solid var(--accent)" }}
+            className="font-mono text-xs text-accent px-3 py-1.5 hover:bg-accent hover:text-black transition-colors"
           >
-            Resume
+            cv.pdf
           </a>
         </div>
+
+        {/* mobile toggle */}
+        <button
+          className="md:hidden font-mono text-xs text-muted"
+          onClick={() => setOpen(!open)}
+        >
+          {open ? "close" : "menu"}
+        </button>
       </div>
+
+      {/* mobile menu */}
+      {open && (
+        <div
+          style={{ borderBottom: "1px solid var(--border)" }}
+          className="md:hidden bg-bg px-6 pb-4 flex flex-col gap-4"
+        >
+          {links.map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="font-mono text-xs text-muted hover:text-text transition-colors"
+            >
+              {l.label}
+            </a>
+          ))}
+          <a
+            href="/files/CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={trackResumeDownload}
+            className="font-mono text-xs text-accent"
+          >
+            cv.pdf ↗
+          </a>
+        </div>
+      )}
     </nav>
   );
 }
