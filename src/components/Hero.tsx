@@ -4,15 +4,27 @@ export default function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center px-6 pt-14">
       <div className="max-w-4xl mx-auto w-full py-24">
-        <p className="font-mono text-xs text-muted mb-6 tracking-widest uppercase">
-          Systems Engineer
-        </p>
+        <img
+          src="/profile.jpg"
+          alt="Eduardo Silva"
+          style={{
+            width: "88px",
+            height: "88px",
+            borderRadius: "50%",
+            objectFit: "cover",
+            marginBottom: "24px",
+          }}
+        />
 
         <h1 className="text-5xl md:text-7xl font-light text-text leading-none mb-8 tracking-tight">
           Eduardo
           <br />
           Silva
         </h1>
+
+        <p className="font-mono text-xs text-muted mb-6 tracking-widest uppercase">
+          Systems Engineer
+        </p>
 
         <p className="text-lg md:text-xl text-muted font-light max-w-xl leading-relaxed mb-12">
           I build ML systems, GPU rendering pipelines, and run neural networks
@@ -23,7 +35,7 @@ export default function Hero() {
           <a
             href="#projects"
             style={{ background: "var(--accent)" }}
-            className="font-mono text-xs text-black px-5 py-3 hover:opacity-90 transition-opacity"
+            className="font-mono text-xs text-white px-5 py-3 hover:opacity-90 transition-opacity"
           >
             projects →
           </a>
