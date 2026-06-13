@@ -10,6 +10,15 @@ const credentials = [
     url: "https://coursera.org/verify/27XMXM91K1AD",
   },
   {
+    title:
+      "Introduction to Embedded Systems Software and Development Environments",
+    issuer: "University of Colorado Boulder",
+    platform: "Coursera",
+    date: "Jun 2026",
+    grade: "93.92%",
+    url: "https://coursera.org/verify/VOC7ZW58XDJC",
+  },
+  {
     title: "Azure AI Fundamentals (AI-900)",
     issuer: "Microsoft",
     platform: "Microsoft Learn",
