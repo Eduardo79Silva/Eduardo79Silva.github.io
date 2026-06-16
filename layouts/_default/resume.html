@@ -1,6 +1,5 @@
 {{ define "main" }}
 <div class="resume container">
-
   <header class="resume-head">
     <div>
       <h1>Eduardo Silva</h1>
@@ -8,18 +7,43 @@
       <p class="resume-contact mono">
         <a href="mailto:eduardo4silva@gmail.com">eduardo4silva@gmail.com</a>
         <span class="dot">◆</span>
-        <a href="https://github.com/eduardo79silva" target="_blank" rel="noopener noreferrer">github</a>
+        <a
+          href="https://github.com/eduardo79silva"
+          target="_blank"
+          rel="noopener noreferrer"
+          >github</a
+        >
         <span class="dot">◆</span>
-        <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer">linkedin</a>
+        <a
+          href="https://www.linkedin.com/in/eduardo79silva/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >linkedin</a
+        >
         <span class="dot">◆</span>
         <span>Portugal · Remote</span>
       </p>
     </div>
-    <a href="/files/CV.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-accent mono no-print">download pdf ↓</a>
+    <a
+      href="/files/CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-accent mono no-print"
+      >download pdf ↓</a
+    >
   </header>
 
   <section class="resume-block">
-    <p class="resume-summary">Systems engineer building ML pipelines, GPU rendering, and embedded AI — from production cloud backends to neural networks on bare-metal microcontrollers.</p>
+    <p class="resume-summary">
+      Engineer with over 2 years of production experience building
+      performance-critical systems. Hands-on depth in real-time rendering
+      (Vulkan), GPU compute pipelines, and physically-based simulation built
+      from scratch with explicit focus on memory management, latency, and
+      resource constraints. Production ML background includes a RAG chatbot
+      serving around 500 students and XGBoost transaction classification
+      pipelines. Currently building an SNN/EEG motor imagery classifier
+      targeting embedded inference.
+    </p>
   </section>
 
   <section class="resume-block">
@@ -27,12 +51,16 @@
     {{ range .Site.Data.experience }}
     <div class="resume-entry">
       <div class="resume-entry-head">
-        <p class="resume-role mono">{{ .role }} <span class="resume-at">· {{ .company }}</span></p>
+        <p class="resume-role mono">
+          {{ .role }} <span class="resume-at">· {{ .company }}</span>
+        </p>
         <span class="resume-period mono">{{ .period }}</span>
       </div>
       {{ with .details }}
       <ul class="bullets">
-        {{ range . }}<li>{{ . }}</li>{{ end }}
+        {{ range . }}
+        <li>{{ . }}</li>
+        {{ end }}
       </ul>
       {{ else }}
       <p class="resume-detail">{{ .detail }}</p>
@@ -46,10 +74,14 @@
     {{ range .Site.Data.education }}
     <div class="resume-entry">
       <div class="resume-entry-head">
-        <p class="resume-role mono">{{ .degree }} <span class="resume-at">· {{ .school }}</span></p>
+        <p class="resume-role mono">
+          {{ .degree }} <span class="resume-at">· {{ .school }}</span>
+        </p>
         <span class="resume-period mono">{{ .period }}</span>
       </div>
-      {{ with .detail }}<p class="resume-detail">{{ . }}</p>{{ end }}
+      {{ with .detail }}
+      <p class="resume-detail">{{ . }}</p>
+      {{ end }}
     </div>
     {{ end }}
   </section>
@@ -76,10 +108,18 @@
         <p class="resume-role mono">{{ .title }}</p>
         <span class="resume-period mono">{{ .date }}</span>
       </div>
-      <p class="resume-detail">{{ .issuer }} · {{ .platform }}{{ with .grade }} · {{ . }}{{ end }} — <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="resume-verify">verify ↗</a></p>
+      <p class="resume-detail">
+        {{ .issuer }} · {{ .platform }}{{ with .grade }} · {{ . }}{{ end }} —
+        <a
+          href="{{ .url }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resume-verify"
+          >verify ↗</a
+        >
+      </p>
     </div>
     {{ end }}
   </section>
-
 </div>
 {{ end }}

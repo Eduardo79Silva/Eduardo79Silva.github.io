@@ -1,80 +1,109 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Deploying a Neural Network on STM32 with No OS | Eduardo Silva</title>
-<meta name=description content="How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.">
-<meta name=author content="Eduardo Silva">
-<link rel=stylesheet href=https://eduardo79silva.github.io/css/main.min.css>
-<link rel=preconnect href=https://fonts.googleapis.com>
-<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deploying a Neural Network on STM32 with No OS | Eduardo Silva</title>
+  <meta name="description" content="How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.">
+  <meta name="author" content="Eduardo Silva">
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPW3RDS6H4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-DPW3RDS6H4',{page_path:window.location.pathname})</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DPW3RDS6H4', { page_path: window.location.pathname });
+</script>
+
+
 </head>
 <body>
+
 <nav>
-<div class=container>
-<a href=/ class="brand mono">eduardo<span class=accent>.</span>silva</a>
-<button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded=false>menu</button>
-<div class=nav-links>
-<a href=/>home</a>
-<a href=/posts/ class=active>writing</a>
-<a href=/projects/>projects</a>
-<a href=/about/>about</a>
-<a href=/resume/ class="cv mono">resume</a>
-</div>
-</div>
+  <div class="container">
+    <a href="/" class="brand mono">eduardo<span class="accent">.</span>silva</a>
+    <button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded="false">menu</button>
+    <div class="nav-links">
+      
+      <a href="/" >home</a>
+      <a href="/posts/" class="active">writing</a>
+      <a href="/projects/" >projects</a>
+      <a href="/about/" >about</a>
+      <a href="/resume/" class="cv mono ">resume</a>
+    </div>
+  </div>
 </nav>
+
 <main>
+  
 <div class="post-header container">
-<a href=/posts/ class="back-link mono">← all posts</a>
-<div class="post-meta mono">
-<span>June 01, 2026</span>
-<span class=dot>◆</span>
-<span>1 min read</span>
-<span class=dot>◆</span><span>Eduardo Silva</span>
+  <a href="/posts/" class="back-link mono">← all posts</a>
+  <div class="post-meta mono">
+    <span>June 01, 2026</span>
+    <span class="dot">◆</span>
+    <span>1 min read</span>
+    <span class="dot">◆</span><span>Eduardo Silva</span>
+  </div>
+  <h1>Deploying a Neural Network on STM32 with No OS</h1>
+  <p class="post-lead">How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.</p>
+  
+  <div class="pill-row">
+    <span class="pill sm">Embedded</span><span class="pill sm">TinyML</span><span class="pill sm">STM32</span><span class="pill sm">C&#43;&#43;</span><span class="pill sm">TensorFlow Lite</span>
+  </div>
+  
 </div>
-<h1>Deploying a Neural Network on STM32 with No OS</h1>
-<p class=post-lead>How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.</p>
-<div class=pill-row>
-<span class="pill sm">Embedded</span><span class="pill sm">TinyML</span><span class="pill sm">STM32</span><span class="pill sm">C++</span><span class="pill sm">TensorFlow Lite</span>
-</div>
-</div>
+
 <article class="post-content container">
-<p>This is an example post. Replace with your actual content.</p>
-<h2 id=the-goal>The Goal</h2>
+  <p>This is an example post. Replace with your actual content.</p>
+<h2 id="the-goal">The Goal</h2>
 <p>Run a trained neural network on an STM32 Nucleo-L476RG with no operating system, no heap allocator, and no external dependencies beyond TFLM.</p>
-<h2 id=quantization>Quantization</h2>
+<h2 id="quantization">Quantization</h2>
 <p>Post-training quantization converts float32 weights to int8, cutting model size by ~4x and making it feasible to fit in 128KB flash.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python>converter <span style=color:#ff79c6>=</span> tf<span style=color:#ff79c6>.</span>lite<span style=color:#ff79c6>.</span>TFLiteConverter<span style=color:#ff79c6>.</span>from_keras_model(model)
-converter<span style=color:#ff79c6>.</span>optimizations <span style=color:#ff79c6>=</span> [tf<span style=color:#ff79c6>.</span>lite<span style=color:#ff79c6>.</span>Optimize<span style=color:#ff79c6>.</span>DEFAULT]
-tflite_model <span style=color:#ff79c6>=</span> converter<span style=color:#ff79c6>.</span>convert()
-</code></pre></div><h2 id=deploying-to-flash>Deploying to Flash</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>converter <span style="color:#ff79c6">=</span> tf<span style="color:#ff79c6">.</span>lite<span style="color:#ff79c6">.</span>TFLiteConverter<span style="color:#ff79c6">.</span>from_keras_model(model)
+</span></span><span style="display:flex;"><span>converter<span style="color:#ff79c6">.</span>optimizations <span style="color:#ff79c6">=</span> [tf<span style="color:#ff79c6">.</span>lite<span style="color:#ff79c6">.</span>Optimize<span style="color:#ff79c6">.</span>DEFAULT]
+</span></span><span style="display:flex;"><span>tflite_model <span style="color:#ff79c6">=</span> converter<span style="color:#ff79c6">.</span>convert()
+</span></span></code></pre></div><h2 id="deploying-to-flash">Deploying to Flash</h2>
 <p>The quantized model is embedded as a C byte array and linked directly into flash memory — no filesystem needed.</p>
+
 </article>
+
 <div class="post-footer container">
-<a href=/posts/ class="btn btn-ghost mono">← back to writing</a>
+  <a href="/posts/" class="btn btn-ghost mono">← back to writing</a>
 </div>
+
 </main>
+
 <footer>
-<div class=container>
-<div class=footer-top>
-<div>
-<p class="footer-brand mono">eduardo<span class=accent>.</span>silva</p>
-<p class=footer-tag>ML systems · GPU pipelines · neural nets on bare metal</p>
-</div>
-<div class="footer-links mono">
-<a href=https://github.com/Eduardo79Silva target=_blank rel="noopener noreferrer">github ↗</a>
-<a href=https://www.linkedin.com/in/eduardo79silva/ target=_blank rel="noopener noreferrer">linkedin ↗</a>
-<a href=mailto:eduardo4silva@gmail.com>email ↗</a>
-</div>
-</div>
-<div class=footer-bottom>
-<span class=mono>© 2026 Eduardo Silva</span>
-<span class=mono>built with Hugo</span>
-</div>
-</div>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand mono">eduardo<span class="accent">.</span>silva</p>
+        <p class="footer-tag">ML systems · GPU pipelines · neural nets on bare metal</p>
+      </div>
+      <div class="footer-links mono">
+        <a href="https://github.com/Eduardo79Silva" target="_blank" rel="noopener noreferrer">github ↗</a>
+        <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+        <a href="mailto:eduardo4silva@gmail.com">email ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">© 2026 Eduardo Silva</span>
+      <span class="mono">built with Hugo</span>
+    </div>
+  </div>
 </footer>
-<script>document.querySelector('.nav-toggle')?.addEventListener('click',function(){const a=document.querySelector('.nav-links'),b=a.classList.toggle('open');this.setAttribute('aria-expanded',b)})</script>
+
+<script>
+  document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+    const links = document.querySelector('.nav-links');
+    const open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+
 </body>
 </html>

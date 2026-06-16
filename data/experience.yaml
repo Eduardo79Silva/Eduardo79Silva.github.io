@@ -1,25 +1,24 @@
-# Each role can use EITHER:
-#   detail:  a single paragraph (string)
-#   details: a list of bullet points (recommended)
 - role: Fullstack Developer
   company: MieterEngel
   period: May 2025 – Present
   details:
-    - Build core features of Germany's largest digital tenant-protection platform.
-    - Design async AWS Lambda pipelines and event-driven architecture.
-    - Work across TypeORM, GraphQL, and SSO integrations.
+    - "Designed an async PDF processing pipeline on AWS Lambda: concurrency-bounded execution, direct S3 streaming, and chunked I/O, eliminating over 50 hours/month of manual processing."
+    - Implemented a streaming ZIP generation pipeline to S3 with a content-addressable cache keyed on document ID hashes, eliminating redundant recomputation and saving over 30 hours/month of service team time.
+    - "Owned end-to-end delivery of a multi-tenant case management system: data model design and state machine for court case lifecycle management across 5+ insurance partners."
 
 - role: AI Software Engineer
   company: ARMIS GROUP
   period: Jul 2023 – May 2025
   details:
-    - Built production AI systems — RAG pipelines, LLM-powered chatbots, and NLP classifiers.
-    - Deployed a university chatbot on-premises.
-    - Stack — Azure OpenAI, TypeScript, Python.
+    - "Led end-to-end development of a merchant transaction categorisation model for an international bank: preprocessed over 100K transactions, applied clustering-guided labelling for class imbalance, trained and compared XGBoost and Ensemble Neural Network classifiers with GridSearch hyperparameter tuning."
+    - "Contributed to preprocessing pipeline for a 3TB image classification dataset: implemented simulated annealing-based sample selection alongside manual classification for dataset quality and balance."
+    - Delivered a 250K PRR-funded AI chatbot for the Faculty of Economics, University of Porto in 2 months. RAG architecture over course-specific knowledge bases, serving approximately 500 students. Deployed on-premises with custom CI/CD.
+    - Implemented OAuth 2.0 with Microsoft as Identity Provider and RBAC caching layer; managed infrastructure with Bicep (IaC) and custom Bash CI/CD pipelines.
+    - Led technical planning and sprint decisions during tech lead absence. Authored onboarding documentation adopted permanently by the team.
 
 - role: Software Engineer Intern
   company: ARMIS GROUP
   period: Feb 2023 – Jul 2023
   details:
-    - Developed AI-powered web forms.
-    - Produced UML documentation and worked in agile workflows.
+    - Built SmartForms, an intelligent document processing system for international sports clients (Portuguese Football Federation, Benfica, CONCACAF) using Azure Form Recognizer, OCR, and CosmosDB on a microservices architecture with async queue processing.
+    - Graded 18/20 by FEUP as an assessed university project.

@@ -1,165 +1,295 @@
-<!doctype html><html lang=en>
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<title>Resume | Eduardo Silva</title>
-<meta name=description content="Eduardo Silva — Systems Engineer. Experience, skills, and credentials.">
-<meta name=author content="Eduardo Silva">
-<link rel=stylesheet href=https://eduardo79silva.github.io/css/main.min.css>
-<link rel=preconnect href=https://fonts.googleapis.com>
-<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume | Eduardo Silva</title>
+  <meta name="description" content="Eduardo Silva — Systems Engineer. Experience, skills, and credentials.">
+  <meta name="author" content="Eduardo Silva">
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPW3RDS6H4"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-DPW3RDS6H4',{page_path:window.location.pathname})</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DPW3RDS6H4', { page_path: window.location.pathname });
+</script>
+
+
 </head>
 <body>
+
 <nav>
-<div class=container>
-<a href=/ class="brand mono">eduardo<span class=accent>.</span>silva</a>
-<button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded=false>menu</button>
-<div class=nav-links>
-<a href=/>home</a>
-<a href=/posts/>writing</a>
-<a href=/projects/>projects</a>
-<a href=/about/>about</a>
-<a href=/resume/ class="cv mono active">resume</a>
-</div>
-</div>
+  <div class="container">
+    <a href="/" class="brand mono">eduardo<span class="accent">.</span>silva</a>
+    <button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded="false">menu</button>
+    <div class="nav-links">
+      
+      <a href="/" >home</a>
+      <a href="/posts/" >writing</a>
+      <a href="/projects/" >projects</a>
+      <a href="/about/" >about</a>
+      <a href="/resume/" class="cv mono active">resume</a>
+    </div>
+  </div>
 </nav>
+
 <main>
+  
 <div class="resume container">
-<header class=resume-head>
-<div>
-<h1>Eduardo Silva</h1>
-<p class="resume-title mono">Systems Engineer · ML · Embedded · GPU</p>
-<p class="resume-contact mono">
-<a href=mailto:eduardo4silva@gmail.com>eduardo4silva@gmail.com</a>
-<span class=dot>◆</span>
-<a href=https://github.com/eduardo79silva target=_blank rel="noopener noreferrer">github</a>
-<span class=dot>◆</span>
-<a href=https://www.linkedin.com/in/eduardo79silva/ target=_blank rel="noopener noreferrer">linkedin</a>
-<span class=dot>◆</span>
-<span>Portugal · Remote</span>
-</p>
+  <header class="resume-head">
+    <div>
+      <h1>Eduardo Silva</h1>
+      <p class="resume-title mono">Systems Engineer · ML · Embedded · GPU</p>
+      <p class="resume-contact mono">
+        <a href="mailto:eduardo4silva@gmail.com">eduardo4silva@gmail.com</a>
+        <span class="dot">◆</span>
+        <a
+          href="https://github.com/eduardo79silva"
+          target="_blank"
+          rel="noopener noreferrer"
+          >github</a
+        >
+        <span class="dot">◆</span>
+        <a
+          href="https://www.linkedin.com/in/eduardo79silva/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >linkedin</a
+        >
+        <span class="dot">◆</span>
+        <span>Portugal · Remote</span>
+      </p>
+    </div>
+    <a
+      href="/files/CV.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="btn btn-accent mono no-print"
+      >download pdf ↓</a
+    >
+  </header>
+
+  <section class="resume-block">
+    <p class="resume-summary">
+      Engineer with over 2 years of production experience building
+      performance-critical systems. Hands-on depth in real-time rendering
+      (Vulkan), GPU compute pipelines, and physically-based simulation built
+      from scratch with explicit focus on memory management, latency, and
+      resource constraints. Production ML background includes a RAG chatbot
+      serving around 500 students and XGBoost transaction classification
+      pipelines. Currently building an SNN/EEG motor imagery classifier
+      targeting embedded inference.
+    </p>
+  </section>
+
+  <section class="resume-block">
+    <h2 class="resume-h2 mono">Experience</h2>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">
+          Fullstack Developer <span class="resume-at">· MieterEngel</span>
+        </p>
+        <span class="resume-period mono">May 2025 – Present</span>
+      </div>
+      
+      <ul class="bullets">
+        
+        <li>Designed an async PDF processing pipeline on AWS Lambda: concurrency-bounded execution, direct S3 streaming, and chunked I/O, eliminating over 50 hours/month of manual processing.</li>
+        
+        <li>Implemented a streaming ZIP generation pipeline to S3 with a content-addressable cache keyed on document ID hashes, eliminating redundant recomputation and saving over 30 hours/month of service team time.</li>
+        
+        <li>Owned end-to-end delivery of a multi-tenant case management system: data model design and state machine for court case lifecycle management across 5&#43; insurance partners.</li>
+        
+      </ul>
+      
+    </div>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">
+          AI Software Engineer <span class="resume-at">· ARMIS GROUP</span>
+        </p>
+        <span class="resume-period mono">Jul 2023 – May 2025</span>
+      </div>
+      
+      <ul class="bullets">
+        
+        <li>Led end-to-end development of a merchant transaction categorisation model for an international bank: preprocessed over 100K transactions, applied clustering-guided labelling for class imbalance, trained and compared XGBoost and Ensemble Neural Network classifiers with GridSearch hyperparameter tuning.</li>
+        
+        <li>Contributed to preprocessing pipeline for a 3TB image classification dataset: implemented simulated annealing-based sample selection alongside manual classification for dataset quality and balance.</li>
+        
+        <li>Delivered a 250K PRR-funded AI chatbot for the Faculty of Economics, University of Porto in 2 months. RAG architecture over course-specific knowledge bases, serving approximately 500 students. Deployed on-premises with custom CI/CD.</li>
+        
+        <li>Implemented OAuth 2.0 with Microsoft as Identity Provider and RBAC caching layer; managed infrastructure with Bicep (IaC) and custom Bash CI/CD pipelines.</li>
+        
+        <li>Led technical planning and sprint decisions during tech lead absence. Authored onboarding documentation adopted permanently by the team.</li>
+        
+      </ul>
+      
+    </div>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">
+          Software Engineer Intern <span class="resume-at">· ARMIS GROUP</span>
+        </p>
+        <span class="resume-period mono">Feb 2023 – Jul 2023</span>
+      </div>
+      
+      <ul class="bullets">
+        
+        <li>Built SmartForms, an intelligent document processing system for international sports clients (Portuguese Football Federation, Benfica, CONCACAF) using Azure Form Recognizer, OCR, and CosmosDB on a microservices architecture with async queue processing.</li>
+        
+        <li>Graded 18/20 by FEUP as an assessed university project.</li>
+        
+      </ul>
+      
+    </div>
+    
+  </section>
+
+  <section class="resume-block">
+    <h2 class="resume-h2 mono">Education</h2>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">
+          BSc in Informatics and Computing Engineering <span class="resume-at">· Faculty of Engineering - University of Porto</span>
+        </p>
+        <span class="resume-period mono">2020 – 2023</span>
+      </div>
+      
+    </div>
+    
+  </section>
+
+  <section class="resume-block">
+    <h2 class="resume-h2 mono">Skills</h2>
+    <div class="resume-skills">
+      
+      <div class="resume-skill-row">
+        <p class="resume-skill-cat mono">Systems / Embedded</p>
+        <div class="pill-row">
+          <span class="pill sm">C&#43;&#43;23</span><span class="pill sm">C</span><span class="pill sm">ARM Cortex-M</span><span class="pill sm">STM32</span><span class="pill sm">CMake</span><span class="pill sm">Vulkan</span><span class="pill sm">GLSL</span>
+        </div>
+      </div>
+      
+      <div class="resume-skill-row">
+        <p class="resume-skill-cat mono">ML / AI</p>
+        <div class="pill-row">
+          <span class="pill sm">Python</span><span class="pill sm">PyTorch</span><span class="pill sm">TensorFlow Lite</span><span class="pill sm">scikit-learn</span><span class="pill sm">NumPy</span><span class="pill sm">SciPy</span>
+        </div>
+      </div>
+      
+      <div class="resume-skill-row">
+        <p class="resume-skill-cat mono">Cloud / Backend</p>
+        <div class="pill-row">
+          <span class="pill sm">AWS Lambda</span><span class="pill sm">Azure OpenAI</span><span class="pill sm">TypeScript</span><span class="pill sm">Node.js</span><span class="pill sm">TypeORM</span><span class="pill sm">GraphQL</span>
+        </div>
+      </div>
+      
+      <div class="resume-skill-row">
+        <p class="resume-skill-cat mono">Tools</p>
+        <div class="pill-row">
+          <span class="pill sm">Git</span><span class="pill sm">Linux</span><span class="pill sm">Docker</span><span class="pill sm">GDB</span><span class="pill sm">CircleCI</span>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <section class="resume-block">
+    <h2 class="resume-h2 mono">Certifications</h2>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">Embedded Software and Hardware Architecture</p>
+        <span class="resume-period mono">Jun 2026</span>
+      </div>
+      <p class="resume-detail">
+        University of Colorado Boulder · Coursera · 95.32% —
+        <a
+          href="https://coursera.org/verify/27XMXM91K1AD"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resume-verify"
+          >verify ↗</a
+        >
+      </p>
+    </div>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">Introduction to Embedded Systems Software and Development Environments</p>
+        <span class="resume-period mono">Jun 2026</span>
+      </div>
+      <p class="resume-detail">
+        University of Colorado Boulder · Coursera · 93.92% —
+        <a
+          href="https://coursera.org/verify/VOC7ZW58XDJC"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resume-verify"
+          >verify ↗</a
+        >
+      </p>
+    </div>
+    
+    <div class="resume-entry">
+      <div class="resume-entry-head">
+        <p class="resume-role mono">Azure AI Fundamentals (AI-900)</p>
+        <span class="resume-period mono">Jun 2024</span>
+      </div>
+      <p class="resume-detail">
+        Microsoft · Microsoft Learn —
+        <a
+          href="https://learn.microsoft.com/api/credentials/share/en-us/eduardosilva-3593/F9A01EFC7532F527?sharingId=ECBBA15F329F0074"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="resume-verify"
+          >verify ↗</a
+        >
+      </p>
+    </div>
+    
+  </section>
 </div>
-<a href=/files/CV.pdf target=_blank rel="noopener noreferrer" class="btn btn-accent mono no-print">download pdf ↓</a>
-</header>
-<section class=resume-block>
-<p class=resume-summary>Systems engineer building ML pipelines, GPU rendering, and embedded AI — from production cloud backends to neural networks on bare-metal microcontrollers.</p>
-</section>
-<section class=resume-block>
-<h2 class="resume-h2 mono">Experience</h2>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">Fullstack Developer <span class=resume-at>· MieterEngel</span></p>
-<span class="resume-period mono">May 2025 – Present</span>
-</div>
-<ul class=bullets>
-<li>Build core features of Germany's largest digital tenant-protection platform.</li><li>Design async AWS Lambda pipelines and event-driven architecture.</li><li>Work across TypeORM, GraphQL, and SSO integrations.</li>
-</ul>
-</div>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">AI Software Engineer <span class=resume-at>· ARMIS GROUP</span></p>
-<span class="resume-period mono">Jul 2023 – May 2025</span>
-</div>
-<ul class=bullets>
-<li>Built production AI systems — RAG pipelines, LLM-powered chatbots, and NLP classifiers.</li><li>Deployed a university chatbot on-premises.</li><li>Stack — Azure OpenAI, TypeScript, Python.</li>
-</ul>
-</div>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">Software Engineer Intern <span class=resume-at>· ARMIS GROUP</span></p>
-<span class="resume-period mono">Feb 2023 – Jul 2023</span>
-</div>
-<ul class=bullets>
-<li>Developed AI-powered web forms.</li><li>Produced UML documentation and worked in agile workflows.</li>
-</ul>
-</div>
-</section>
-<section class=resume-block>
-<h2 class="resume-h2 mono">Education</h2>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">BSc in Computer Science / Engineering <span class=resume-at>· University</span></p>
-<span class="resume-period mono">2019 – 2023</span>
-</div>
-<p class=resume-detail>Relevant coursework — systems programming, algorithms, machine learning, computer architecture.</p>
-</div>
-</section>
-<section class=resume-block>
-<h2 class="resume-h2 mono">Skills</h2>
-<div class=resume-skills>
-<div class=resume-skill-row>
-<p class="resume-skill-cat mono">Systems / Embedded</p>
-<div class=pill-row>
-<span class="pill sm">C++23</span><span class="pill sm">C</span><span class="pill sm">ARM Cortex-M</span><span class="pill sm">STM32</span><span class="pill sm">CMake</span><span class="pill sm">Vulkan</span><span class="pill sm">GLSL</span>
-</div>
-</div>
-<div class=resume-skill-row>
-<p class="resume-skill-cat mono">ML / AI</p>
-<div class=pill-row>
-<span class="pill sm">Python</span><span class="pill sm">PyTorch</span><span class="pill sm">TensorFlow Lite</span><span class="pill sm">scikit-learn</span><span class="pill sm">NumPy</span><span class="pill sm">SciPy</span>
-</div>
-</div>
-<div class=resume-skill-row>
-<p class="resume-skill-cat mono">Cloud / Backend</p>
-<div class=pill-row>
-<span class="pill sm">AWS Lambda</span><span class="pill sm">Azure OpenAI</span><span class="pill sm">TypeScript</span><span class="pill sm">Node.js</span><span class="pill sm">TypeORM</span><span class="pill sm">GraphQL</span>
-</div>
-</div>
-<div class=resume-skill-row>
-<p class="resume-skill-cat mono">Tools</p>
-<div class=pill-row>
-<span class="pill sm">Git</span><span class="pill sm">Linux</span><span class="pill sm">Docker</span><span class="pill sm">GDB</span><span class="pill sm">CircleCI</span>
-</div>
-</div>
-</div>
-</section>
-<section class=resume-block>
-<h2 class="resume-h2 mono">Certifications</h2>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">Embedded Software and Hardware Architecture</p>
-<span class="resume-period mono">Jun 2026</span>
-</div>
-<p class=resume-detail>University of Colorado Boulder · Coursera · 95.32% — <a href=https://coursera.org/verify/27XMXM91K1AD target=_blank rel="noopener noreferrer" class=resume-verify>verify ↗</a></p>
-</div>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">Introduction to Embedded Systems Software and Development Environments</p>
-<span class="resume-period mono">Jun 2026</span>
-</div>
-<p class=resume-detail>University of Colorado Boulder · Coursera · 93.92% — <a href=https://coursera.org/verify/VOC7ZW58XDJC target=_blank rel="noopener noreferrer" class=resume-verify>verify ↗</a></p>
-</div>
-<div class=resume-entry>
-<div class=resume-entry-head>
-<p class="resume-role mono">Azure AI Fundamentals (AI-900)</p>
-<span class="resume-period mono">Jun 2024</span>
-</div>
-<p class=resume-detail>Microsoft · Microsoft Learn — <a href="https://learn.microsoft.com/api/credentials/share/en-us/eduardosilva-3593/F9A01EFC7532F527?sharingId=ECBBA15F329F0074" target=_blank rel="noopener noreferrer" class=resume-verify>verify ↗</a></p>
-</div>
-</section>
-</div>
+
 </main>
+
 <footer>
-<div class=container>
-<div class=footer-top>
-<div>
-<p class="footer-brand mono">eduardo<span class=accent>.</span>silva</p>
-<p class=footer-tag>ML systems · GPU pipelines · neural nets on bare metal</p>
-</div>
-<div class="footer-links mono">
-<a href=https://github.com/Eduardo79Silva target=_blank rel="noopener noreferrer">github ↗</a>
-<a href=https://www.linkedin.com/in/eduardo79silva/ target=_blank rel="noopener noreferrer">linkedin ↗</a>
-<a href=mailto:eduardo4silva@gmail.com>email ↗</a>
-</div>
-</div>
-<div class=footer-bottom>
-<span class=mono>© 2026 Eduardo Silva</span>
-<span class=mono>built with Hugo</span>
-</div>
-</div>
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand mono">eduardo<span class="accent">.</span>silva</p>
+        <p class="footer-tag">ML systems · GPU pipelines · neural nets on bare metal</p>
+      </div>
+      <div class="footer-links mono">
+        <a href="https://github.com/Eduardo79Silva" target="_blank" rel="noopener noreferrer">github ↗</a>
+        <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer">linkedin ↗</a>
+        <a href="mailto:eduardo4silva@gmail.com">email ↗</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="mono">© 2026 Eduardo Silva</span>
+      <span class="mono">built with Hugo</span>
+    </div>
+  </div>
 </footer>
-<script>document.querySelector('.nav-toggle')?.addEventListener('click',function(){const a=document.querySelector('.nav-links'),b=a.classList.toggle('open');this.setAttribute('aria-expanded',b)})</script>
+
+<script>
+  document.querySelector('.nav-toggle')?.addEventListener('click', function () {
+    const links = document.querySelector('.nav-links');
+    const open = links.classList.toggle('open');
+    this.setAttribute('aria-expanded', open);
+  });
+</script>
+
 </body>
 </html>
