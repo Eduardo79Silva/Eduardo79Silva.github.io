@@ -1,0 +1,25 @@
+{{ define "main" }}
+<div class="page-head container">
+  <p class="section-label"><span class="section-num">›</span> Projects</p>
+  <h1>Things I've <span class="accent-text">built</span></h1>
+  <p class="page-intro">Embedded ML, Vulkan rendering, computational neuroscience, and production AI systems.</p>
+</div>
+
+<section class="container">
+  <div class="project-list">
+    {{ range .Site.Data.projects }}
+    <div class="project-row">
+      <h3 class="mono">{{ .title }}</h3>
+      <p>{{ .description }}</p>
+      <div class="pill-row">
+        {{ range .tags }}<span class="pill sm">{{ . }}</span>{{ end }}
+      </div>
+      <div class="card-links mono">
+        {{ with .github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">github ↗</a>{{ end }}
+        {{ with .website }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">demo ↗</a>{{ end }}
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}

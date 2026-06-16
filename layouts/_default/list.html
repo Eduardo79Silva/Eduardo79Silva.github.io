@@ -1,30 +1,89 @@
 {{ define "main" }}
-<div style="padding: 8rem 1.5rem 6rem;">
-  <div class="container">
-    <p class="section-label">Writing</p>
-    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; margin-bottom: 1rem;">Posts</h1>
-    <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 4rem;">Technical writing on C++ systems, real-time rendering, ML engineering, and embedded AI.</p>
+<div class="page-head container">
+  <p class="section-label"><span class="section-num">›</span> Writing</p>
+  <h1>Posts</h1>
+  <p class="page-intro">Technical writing on C++ systems, real-time rendering, ML engineering, and embedded AI.</p>
+</div>
 
-    {{ if .Pages }}
-      <div class="divider-bottom">
-        {{ range .Pages }}
-        <a href="{{ .Permalink }}" style="display: block;">
-          <div class="post-row">
-            <span class="post-date mono">{{ .Date.Format "Jan 02, 2006" }}</span>
-            <div>
-              <p class="post-title">{{ .Title }}</p>
-              <p class="post-desc">{{ .Description }}</p>
-              <div class="post-tags">
-                {{ range .Params.tags }}<span>{{ . }}</span>{{ end }}
-              </div>
-            </div>
-          </div>
-        </a>
-        {{ end }}
-      </div>
-    {{ else }}
-      <p style="font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; color: var(--muted);">Posts coming soon — on Vulkan pipeline architecture, embedded ML deployment, and production ML lessons.</p>
+<div class="container">
+{{ if .Pages }}
+
+  {{/* Collect unique tags across all posts for the filter bar */}}
+  {{ $tags := slice }}
+  {{ range .Pages }}{{ range .Params.tags }}{{ $tags = $tags | append . }}{{ end }}{{ end }}
+  {{ $tags = $tags | uniq | sort }}
+
+  {{/* Featured latest post */}}
+  {{ with index .Pages 0 }}
+  <a href="{{ .Permalink }}" class="feature-card">
+    <div class="feature-meta mono">
+      <span class="badge-accent">latest</span>
+      <span>{{ .Date.Format "Jan 02, 2006" }}</span>
+      <span>{{ .ReadingTime }} min read</span>
+    </div>
+    <h3>{{ .Title }}</h3>
+    <p>{{ .Description }}</p>
+    <div class="pill-row">
+      {{ range .Params.tags }}<span class="pill sm">{{ . }}</span>{{ end }}
+    </div>
+    <span class="feature-cta mono">read post →</span>
+  </a>
+  {{ end }}
+
+  {{/* Tag filter chips */}}
+  <div class="filter-bar" id="filter-bar">
+    <button class="chip active mono" data-tag="all">all</button>
+    {{ range $tags }}
+    <button class="chip mono" data-tag="{{ . | urlize }}">{{ . }}</button>
     {{ end }}
   </div>
+
+  {{/* Full post list */}}
+  <div class="post-list" id="post-list">
+    {{ range .Pages }}
+    <a href="{{ .Permalink }}" class="post-row" data-tags="{{ range .Params.tags }}{{ . | urlize }} {{ end }}">
+      <span class="post-date mono">{{ .Date.Format "Jan 02, 2006" }}</span>
+      <div class="post-body">
+        <p class="post-title">{{ .Title }}</p>
+        <p class="post-desc">{{ .Description }}</p>
+        <div class="post-foot">
+          <div class="pill-row">
+            {{ range .Params.tags }}<span class="pill sm">{{ . }}</span>{{ end }}
+          </div>
+          <span class="post-time mono">{{ .ReadingTime }} min read</span>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+  <p class="no-results mono" id="no-results" hidden>No posts with that tag yet.</p>
+
+{{ else }}
+  <p class="empty mono">Posts coming soon — on Vulkan pipeline architecture, embedded ML deployment, and production ML lessons.</p>
+{{ end }}
 </div>
+
+<script>
+  (function () {
+    const bar = document.getElementById('filter-bar');
+    if (!bar) return;
+    const rows = Array.from(document.querySelectorAll('#post-list .post-row'));
+    const empty = document.getElementById('no-results');
+    bar.addEventListener('click', function (e) {
+      const btn = e.target.closest('.chip');
+      if (!btn) return;
+      bar.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      const tag = btn.dataset.tag;
+      let visible = 0;
+      rows.forEach(row => {
+        const tags = (row.dataset.tags || '').split(' ');
+        const show = tag === 'all' || tags.includes(tag);
+        row.hidden = !show;
+        if (show) visible++;
+      });
+      if (empty) empty.hidden = visible !== 0;
+    });
+  })();
+</script>
 {{ end }}

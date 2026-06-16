@@ -1,34 +1,99 @@
 {{ define "main" }}
 
 <section class="hero container">
-  <img src="/images/profile.jpg" alt="Eduardo Silva">
-  <h1>Eduardo<br>Silva</h1>
-  <p class="subtitle mono">Systems Engineer</p>
-  <p class="bio">I build ML systems, GPU rendering pipelines, and run neural networks on bare metal. Based in Portugal, working remotely.</p>
+  <div class="hero-photo">
+    <img src="/images/profile.jpg" alt="Eduardo Silva">
+    <span class="status-dot" title="Open to work"></span>
+  </div>
+  <p class="subtitle mono">Systems Engineer · Portugal</p>
+  <h1>Eduardo <span class="accent-text">Silva</span></h1>
+  <p class="bio">I build ML systems, GPU rendering pipelines, and run neural networks on bare metal — from <span class="hl">C++23</span> and <span class="hl">Vulkan</span> to <span class="hl">STM32</span> and <span class="hl">TensorFlow Lite</span>.</p>
   <div class="hero-links">
-    <a href="#projects" class="primary mono">projects →</a>
-    <a href="https://github.com/Eduardo79Silva" target="_blank" rel="noopener noreferrer" class="secondary mono">github ↗</a>
-    <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer" class="secondary mono">linkedin ↗</a>
+    <a href="/projects/" class="btn btn-accent mono">view projects →</a>
+    <a href="/resume/" class="btn btn-ghost mono">resume</a>
+    <a href="https://github.com/Eduardo79Silva" target="_blank" rel="noopener noreferrer" class="btn btn-ghost mono">github ↗</a>
   </div>
   <div class="hero-tags">
     {{ range slice "C++23" "Python" "Vulkan" "TensorFlow Lite" "STM32" "PyTorch" "TypeScript" "AWS Lambda" }}
-    <span>{{ . }}</span>
+    <span class="pill">{{ . }}</span>
     {{ end }}
   </div>
 </section>
 
-<section id="projects">
+<section id="currently">
   <div class="container">
-    <p class="section-label">Projects</p>
-    <div class="divider-bottom">
-      {{ range .Site.Data.projects }}
+    <p class="section-label"><span class="section-num">01</span> Currently</p>
+    <div class="currently-list">
+      <div class="currently-row">
+        <p class="currently-key mono">building</p>
+        <p class="currently-val">Tenant-protection platform infra at <span class="hl">MieterEngel</span> — AWS Lambda pipelines &amp; async event architecture.</p>
+      </div>
+      <div class="currently-row">
+        <p class="currently-key mono">learning</p>
+        <p class="currently-val">Embedded software architecture &amp; real-time systems on ARM Cortex-M.</p>
+      </div>
+      <div class="currently-row">
+        <p class="currently-key mono">hacking on</p>
+        <p class="currently-val">A Vulkan path tracer and a spiking neural network for EEG motor-imagery.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ if $posts }}
+<section id="latest" class="alt-bg">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label"><span class="section-num">02</span> Latest writing</p>
+      <a href="/posts/" class="link-arrow mono">all posts →</a>
+    </div>
+    {{ with index $posts 0 }}
+    <a href="{{ .Permalink }}" class="feature-card">
+      <div class="feature-meta mono">
+        <span class="badge-accent">latest</span>
+        <span>{{ .Date.Format "Jan 02, 2006" }}</span>
+        <span>{{ .ReadingTime }} min read</span>
+      </div>
+      <h3>{{ .Title }}</h3>
+      <p>{{ .Description }}</p>
+      <div class="pill-row">
+        {{ range .Params.tags }}<span class="pill sm">{{ . }}</span>{{ end }}
+      </div>
+      <span class="feature-cta mono">read post →</span>
+    </a>
+    {{ end }}
+
+    {{ if gt (len $posts) 1 }}
+    <div class="mini-list">
+      {{ range first 3 (after 1 $posts) }}
+      <a href="{{ .Permalink }}" class="mini-row">
+        <span class="mini-date mono">{{ .Date.Format "Jan 02" }}</span>
+        <span class="mini-title">{{ .Title }}</span>
+        <span class="mini-time mono">{{ .ReadingTime }} min</span>
+      </a>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label"><span class="section-num">03</span> Selected work</p>
+      <a href="/projects/" class="link-arrow mono">all projects →</a>
+    </div>
+    <div class="project-list">
+      {{ range first 3 .Site.Data.projects }}
       <div class="project-row">
-        <h3>{{ .title }}</h3>
-        <p>{{ .description }}</p>
-        <div class="project-tags">
-          {{ range .tags }}<span>{{ . }}</span>{{ end }}
+        <h3 class="mono">{{ .title }}</h3>
+        <p>{{ .description | truncate 180 }}</p>
+        <div class="pill-row">
+          {{ range first 5 .tags }}<span class="pill sm">{{ . }}</span>{{ end }}
         </div>
-        <div class="project-links">
+        <div class="card-links mono">
           {{ with .github }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">github ↗</a>{{ end }}
           {{ with .website }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer">demo ↗</a>{{ end }}
         </div>
@@ -38,69 +103,14 @@
   </div>
 </section>
 
-<section id="experience" style="background: var(--bg-1);">
-  <div class="container">
-    <p class="section-label">Experience</p>
-    {{ range .Site.Data.experience }}
-    <div class="row">
-      <div class="row-meta">{{ .period }}</div>
-      <div>
-        <p class="row-title mono">{{ .role }}</p>
-        <p class="row-sub mono">{{ .company }}</p>
-        <p class="row-detail">{{ .detail }}</p>
-      </div>
+<section id="cta" class="alt-bg">
+  <div class="container cta-inner">
+    <h2>Open to ML, embedded,<br>and systems roles.</h2>
+    <p>Remote-first or Portugal-based. Reach out if you're working on something technically interesting.</p>
+    <div class="hero-links">
+      <a href="mailto:eduardo4silva@gmail.com" class="btn btn-accent mono">get in touch →</a>
+      <a href="/about/" class="btn btn-ghost mono">more about me</a>
     </div>
-    {{ end }}
-    <div class="divider-top"></div>
-  </div>
-</section>
-
-<section id="stack">
-  <div class="container">
-    <p class="section-label">Stack</p>
-    <div class="stack-grid">
-      {{ range .Site.Data.stack }}
-      <div class="stack-cell">
-        <p class="category">{{ .category }}</p>
-        <div class="stack-items">
-          {{ range .items }}<span>{{ . }}</span>{{ end }}
-        </div>
-      </div>
-      {{ end }}
-    </div>
-    <div class="divider-top"></div>
-  </div>
-</section>
-
-<section id="credentials" style="background: var(--bg-1);">
-  <div class="container">
-    <p class="section-label">Credentials</p>
-    {{ range .Site.Data.credentials }}
-    <div class="credential-row">
-      <div>
-        <p class="credential-title mono">{{ .title }}</p>
-        <p class="credential-issuer mono">{{ .issuer }} · {{ .platform }}</p>
-      </div>
-      <div>
-        <p class="credential-date mono">{{ .date }}</p>
-        {{ with .grade }}<p class="credential-grade mono">{{ . }}</p>{{ end }}
-      </div>
-      <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="credential-verify mono">verify ↗</a>
-    </div>
-    {{ end }}
-    <div class="divider-top"></div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="container">
-    <p class="section-label">Contact</p>
-    <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 300; margin-bottom: 1rem;">Open to ML, embedded,<br>and systems roles.</h2>
-    <p style="font-size: 0.875rem; color: var(--muted); margin-bottom: 3rem; max-width: 28rem; line-height: 1.75;">Remote-first or Portugal-based. Reach out if you're working on something technically interesting.</p>
-    <div class="contact-row"><span class="contact-label mono">email</span><a href="mailto:eduardo4silva@gmail.com" class="contact-link mono">eduardo4silva@gmail.com ↗</a></div>
-    <div class="contact-row"><span class="contact-label mono">github</span><a href="https://github.com/eduardo79silva" target="_blank" rel="noopener noreferrer" class="contact-link mono">github.com/eduardo79silva ↗</a></div>
-    <div class="contact-row"><span class="contact-label mono">linkedin</span><a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer" class="contact-link mono">linkedin.com/in/eduardo79silva ↗</a></div>
-    <div class="divider-top"></div>
   </div>
 </section>
 

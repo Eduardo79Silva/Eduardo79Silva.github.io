@@ -1,0 +1,88 @@
+{{ define "main" }}
+<div class="page-head container">
+  <p class="section-label"><span class="section-num">›</span> About</p>
+  <h1>Eduardo <span class="accent-text">Silva</span></h1>
+  <p class="page-intro">Systems engineer working across the stack — from ML pipelines in the cloud to neural networks running on bare-metal microcontrollers.</p>
+</div>
+
+<section class="container about-bio">
+  <p>I'm a software engineer based in Portugal. My work spans <span class="hl">production ML systems</span>, <span class="hl">GPU rendering pipelines</span>, and <span class="hl">embedded AI</span>. I like the parts of the stack where the abstractions get thin — quantizing a model to fit in 128KB of flash, hand-managing Vulkan descriptor sets, or designing async event architectures that don't fall over under load.</p>
+  <p>Currently I build core infrastructure for Germany's largest digital tenant-protection platform. Before that I shipped production AI systems — RAG pipelines, LLM chatbots, and NLP classifiers deployed on-premises.</p>
+</section>
+
+<section id="experience" class="alt-bg">
+  <div class="container">
+    <p class="section-label"><span class="section-num">01</span> Experience</p>
+    <div class="timeline">
+      {{ range .Site.Data.experience }}
+      <div class="tl-item">
+        <div class="tl-marker"></div>
+        <div class="tl-meta mono">{{ .period }}</div>
+        <div class="tl-body">
+          <p class="tl-role mono">{{ .role }}</p>
+          <p class="tl-company mono">{{ .company }}</p>
+          <p class="tl-detail">{{ .detail }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="stack">
+  <div class="container">
+    <p class="section-label"><span class="section-num">02</span> Stack</p>
+    <div class="stack-list">
+      {{ range .Site.Data.stack }}
+      <div class="stack-row">
+        <p class="stack-category mono">{{ .category }}</p>
+        <div class="pill-row">
+          {{ range .items }}<span class="pill">{{ . }}</span>{{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="credentials" class="alt-bg">
+  <div class="container">
+    <p class="section-label"><span class="section-num">03</span> Credentials</p>
+    <div class="cred-list">
+      {{ range .Site.Data.credentials }}
+      <div class="cred-row">
+        <div class="cred-main">
+          <p class="cred-title mono">{{ .title }}</p>
+          <p class="cred-issuer mono">{{ .issuer }} · {{ .platform }}</p>
+        </div>
+        <div class="cred-side">
+          <span class="cred-date mono">{{ .date }}</span>
+          {{ with .grade }}<span class="cred-grade mono">{{ . }}</span>{{ end }}
+        </div>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer" class="cred-verify mono">verify ↗</a>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <p class="section-label"><span class="section-num">04</span> Contact</p>
+    <div class="contact-list">
+      <a href="mailto:eduardo4silva@gmail.com" class="contact-row">
+        <span class="contact-label mono">email</span>
+        <span class="contact-link mono">eduardo4silva@gmail.com ↗</span>
+      </a>
+      <a href="https://github.com/eduardo79silva" target="_blank" rel="noopener noreferrer" class="contact-row">
+        <span class="contact-label mono">github</span>
+        <span class="contact-link mono">github.com/eduardo79silva ↗</span>
+      </a>
+      <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer" class="contact-row">
+        <span class="contact-label mono">linkedin</span>
+        <span class="contact-link mono">linkedin.com/in/eduardo79silva ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+{{ end }}

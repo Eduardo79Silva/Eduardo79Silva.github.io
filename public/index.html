@@ -1,286 +1,166 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html><html lang=en>
 <head>
-	<meta name="generator" content="Hugo 0.163.2"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eduardo Silva — Systems Engineer</title>
-  <meta name="description" content="ML systems, GPU rendering pipelines, and neural networks on bare metal. C&#43;&#43;, Python, Vulkan, STM32, TensorFlow Lite.">
-  <meta name="author" content="Eduardo Silva">
-  
-  <link rel="stylesheet" href="http://localhost:1313/css/main.min.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
+<meta name=generator content="Hugo 0.92.2">
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Eduardo Silva — Systems Engineer</title>
+<meta name=description content="ML systems, GPU rendering pipelines, and neural networks on bare metal. C++, Python, Vulkan, STM32, TensorFlow Lite.">
+<meta name=author content="Eduardo Silva">
+<link rel=stylesheet href=https://eduardo79silva.github.io/css/main.min.css>
+<link rel=preconnect href=https://fonts.googleapis.com>
+<link rel=preconnect href=https://fonts.gstatic.com crossorigin>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DPW3RDS6H4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-DPW3RDS6H4', { page_path: window.location.pathname });
-</script>
-
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-DPW3RDS6H4',{page_path:window.location.pathname})</script>
 </head>
 <body>
-
 <nav>
-  <div class="container">
-    <a href="/" class="brand mono">eduardo silva</a>
-    <div class="nav-links">
-      
-        <a href="#projects">projects</a>
-        <a href="#experience">experience</a>
-        <a href="#stack">stack</a>
-        <a href="#contact">contact</a>
-        <a href="/posts">writing</a>
-      
-      <a href="/files/CV.pdf" target="_blank" rel="noopener noreferrer" class="cv mono">cv.pdf</a>
-    </div>
-  </div>
+<div class=container>
+<a href=/ class="brand mono">eduardo<span class=accent>.</span>silva</a>
+<button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded=false>menu</button>
+<div class=nav-links>
+<a href=/ class=active>home</a>
+<a href=/posts/>writing</a>
+<a href=/projects/>projects</a>
+<a href=/about/>about</a>
+<a href=/resume/ class="cv mono">resume</a>
+</div>
+</div>
 </nav>
-
 <main>
-  
-
 <section class="hero container">
-  <img src="/images/profile.jpg" alt="Eduardo Silva">
-  <h1>Eduardo<br>Silva</h1>
-  <p class="subtitle mono">Systems Engineer</p>
-  <p class="bio">I build ML systems, GPU rendering pipelines, and run neural networks on bare metal. Based in Portugal, working remotely.</p>
-  <div class="hero-links">
-    <a href="#projects" class="primary mono">projects →</a>
-    <a href="https://github.com/Eduardo79Silva" target="_blank" rel="noopener noreferrer" class="secondary mono">github ↗</a>
-    <a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer" class="secondary mono">linkedin ↗</a>
-  </div>
-  <div class="hero-tags">
-    
-    <span>C&#43;&#43;23</span>
-    
-    <span>Python</span>
-    
-    <span>Vulkan</span>
-    
-    <span>TensorFlow Lite</span>
-    
-    <span>STM32</span>
-    
-    <span>PyTorch</span>
-    
-    <span>TypeScript</span>
-    
-    <span>AWS Lambda</span>
-    
-  </div>
+<div class=hero-photo>
+<img src=/images/profile.jpg alt="Eduardo Silva">
+<span class=status-dot title="Open to work"></span>
+</div>
+<p class="subtitle mono">Systems Engineer · Portugal</p>
+<h1>Eduardo <span class=accent-text>Silva</span></h1>
+<p class=bio>I build ML systems, GPU rendering pipelines, and run neural networks on bare metal — from <span class=hl>C++23</span> and <span class=hl>Vulkan</span> to <span class=hl>STM32</span> and <span class=hl>TensorFlow Lite</span>.</p>
+<div class=hero-links>
+<a href=/projects/ class="btn btn-accent mono">view projects →</a>
+<a href=/resume/ class="btn btn-ghost mono">resume</a>
+<a href=https://github.com/Eduardo79Silva target=_blank rel="noopener noreferrer" class="btn btn-ghost mono">github ↗</a>
+</div>
+<div class=hero-tags>
+<span class=pill>C++23</span>
+<span class=pill>Python</span>
+<span class=pill>Vulkan</span>
+<span class=pill>TensorFlow Lite</span>
+<span class=pill>STM32</span>
+<span class=pill>PyTorch</span>
+<span class=pill>TypeScript</span>
+<span class=pill>AWS Lambda</span>
+</div>
 </section>
-
-<section id="projects">
-  <div class="container">
-    <p class="section-label">Projects</p>
-    <div class="divider-bottom">
-      
-      <div class="project-row">
-        <h3>STM32 TinyML Sine</h3>
-        <p>Trained a neural network, quantized it, and deployed it via TensorFlow Lite for Microcontrollers on an STM32 Nucleo-L476RG. The model drives a PWM output to trace a sine wave on an LED — inference running on an ARM Cortex-M4 with no OS, no heap allocator, no abstractions.</p>
-        <div class="project-tags">
-          <span>Embedded C</span><span>TFLM</span><span>STM32</span><span>ARM Cortex-M4</span><span>PWM</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Eduardo79Silva/stm32-edge-ai" target="_blank" rel="noopener noreferrer">github ↗</a>
-          
-        </div>
-      </div>
-      
-      <div class="project-row">
-        <h3>Spiking Neural Network</h3>
-        <p>LIF neuron model built from scratch in Python. Implements membrane dynamics, weighted synaptic input, spike reset, and population-level raster/firing-rate visualization. Modular architecture targeting EEG motor imagery classification on the PhysioNet dataset. AdEx neurons and STDP in progress.</p>
-        <div class="project-tags">
-          <span>Python</span><span>NumPy</span><span>LIF Model</span><span>Computational Neuroscience</span><span>EEG</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Eduardo79Silva/spiking-neural-network" target="_blank" rel="noopener noreferrer">github ↗</a>
-          
-        </div>
-      </div>
-      
-      <div class="project-row">
-        <h3>Hikari Ray Tracer</h3>
-        <p>Vulkan-based path tracer with emissive materials and a denoiser. Physical device selection, descriptor sets, compute pipelines, SPIR-V shader compilation. Built as a research platform for further integration with the Majin engine.</p>
-        <div class="project-tags">
-          <span>C&#43;&#43;23</span><span>Vulkan</span><span>GLSL</span><span>GPU Computing</span><span>CMake</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Eduardo79Silva/Hikari-RayTracer" target="_blank" rel="noopener noreferrer">github ↗</a>
-          
-        </div>
-      </div>
-      
-      <div class="project-row">
-        <h3>Majin Engine</h3>
-        <p>3D game engine in C&#43;&#43;23 with a full Vulkan backend. Covers physical device selection, swap chain management, double-buffered command recording, render passes, push constants, and a 2D physics simulation with gravitational vector field visualization.</p>
-        <div class="project-tags">
-          <span>C&#43;&#43;23</span><span>Vulkan</span><span>Physics</span><span>CMake</span><span>GLFW</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/Eduardo79Silva/Majin" target="_blank" rel="noopener noreferrer">github ↗</a>
-          
-        </div>
-      </div>
-      
-      <div class="project-row">
-        <h3>FEP University Chatbot</h3>
-        <p>Production RAG chatbot for a Portuguese university. Azure OpenAI for inference, TypeScript &#43; Python backend, custom deployment pipeline, on-premises delivery. Handles live student queries across the full knowledge base.</p>
-        <div class="project-tags">
-          <span>Azure OpenAI</span><span>RAG</span><span>TypeScript</span><span>Python</span><span>Production ML</span>
-        </div>
-        <div class="project-links">
-          
-          <a href="https://youtu.be/Qx2BIe12lSY" target="_blank" rel="noopener noreferrer">demo ↗</a>
-        </div>
-      </div>
-      
-    </div>
-  </div>
+<section id=currently>
+<div class=container>
+<p class=section-label><span class=section-num>01</span> Currently</p>
+<div class=currently-list>
+<div class=currently-row>
+<p class="currently-key mono">building</p>
+<p class=currently-val>Tenant-protection platform infra at <span class=hl>MieterEngel</span> — AWS Lambda pipelines & async event architecture.</p>
+</div>
+<div class=currently-row>
+<p class="currently-key mono">learning</p>
+<p class=currently-val>Embedded software architecture & real-time systems on ARM Cortex-M.</p>
+</div>
+<div class=currently-row>
+<p class="currently-key mono">hacking on</p>
+<p class=currently-val>A Vulkan path tracer and a spiking neural network for EEG motor-imagery.</p>
+</div>
+</div>
+</div>
 </section>
-
-<section id="experience" style="background: var(--bg-1);">
-  <div class="container">
-    <p class="section-label">Experience</p>
-    
-    <div class="row">
-      <div class="row-meta">May 2025 – Present</div>
-      <div>
-        <p class="row-title mono">Fullstack Developer</p>
-        <p class="row-sub mono">MieterEngel</p>
-        <p class="row-detail">Core features of Germany&#39;s largest digital tenant-protection platform. AWS Lambda pipelines, TypeORM, GraphQL, SSO integrations, async event architecture.</p>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="row-meta">Jul 2023 – May 2025</div>
-      <div>
-        <p class="row-title mono">AI Software Engineer</p>
-        <p class="row-sub mono">ARMIS GROUP</p>
-        <p class="row-detail">Production AI systems — RAG pipelines, LLM-powered chatbots, NLP classifiers. Azure OpenAI, TypeScript, Python. University chatbot deployed on-premises.</p>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="row-meta">Feb 2023 – Jul 2023</div>
-      <div>
-        <p class="row-title mono">Software Engineer Intern</p>
-        <p class="row-sub mono">ARMIS GROUP</p>
-        <p class="row-detail">AI-powered web forms, UML documentation, agile workflows.</p>
-      </div>
-    </div>
-    
-    <div class="divider-top"></div>
-  </div>
+<section id=latest class=alt-bg>
+<div class=container>
+<div class=section-head>
+<p class=section-label><span class=section-num>02</span> Latest writing</p>
+<a href=/posts/ class="link-arrow mono">all posts →</a>
+</div>
+<a href=https://eduardo79silva.github.io/posts/stm32-tinyml-deployment/ class=feature-card>
+<div class="feature-meta mono">
+<span class=badge-accent>latest</span>
+<span>Jun 01, 2026</span>
+<span>1 min read</span>
+</div>
+<h3>Deploying a Neural Network on STM32 with No OS</h3>
+<p>How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.</p>
+<div class=pill-row>
+<span class="pill sm">Embedded</span><span class="pill sm">TinyML</span><span class="pill sm">STM32</span><span class="pill sm">C++</span><span class="pill sm">TensorFlow Lite</span>
+</div>
+<span class="feature-cta mono">read post →</span>
+</a>
+</div>
 </section>
-
-<section id="stack">
-  <div class="container">
-    <p class="section-label">Stack</p>
-    <div class="stack-grid">
-      
-      <div class="stack-cell">
-        <p class="category">Systems / Embedded</p>
-        <div class="stack-items">
-          <span>C&#43;&#43;23</span><span>C</span><span>ARM Cortex-M</span><span>STM32</span><span>CMake</span><span>Vulkan</span><span>GLSL</span>
-        </div>
-      </div>
-      
-      <div class="stack-cell">
-        <p class="category">ML / AI</p>
-        <div class="stack-items">
-          <span>Python</span><span>PyTorch</span><span>TensorFlow Lite</span><span>scikit-learn</span><span>NumPy</span><span>SciPy</span>
-        </div>
-      </div>
-      
-      <div class="stack-cell">
-        <p class="category">Cloud / Backend</p>
-        <div class="stack-items">
-          <span>AWS Lambda</span><span>Azure OpenAI</span><span>TypeScript</span><span>Node.js</span><span>TypeORM</span><span>GraphQL</span>
-        </div>
-      </div>
-      
-      <div class="stack-cell">
-        <p class="category">Tools</p>
-        <div class="stack-items">
-          <span>Git</span><span>Linux</span><span>Docker</span><span>GDB</span><span>CircleCI</span>
-        </div>
-      </div>
-      
-    </div>
-    <div class="divider-top"></div>
-  </div>
+<section id=work>
+<div class=container>
+<div class=section-head>
+<p class=section-label><span class=section-num>03</span> Selected work</p>
+<a href=/projects/ class="link-arrow mono">all projects →</a>
+</div>
+<div class=project-list>
+<div class=project-row>
+<h3 class=mono>STM32 TinyML Sine</h3>
+<p>Trained a neural network, quantized it, and deployed it via TensorFlow Lite for Microcontrollers on an STM32 Nucleo-L476RG. The model drives a PWM output to trace a sine wave on an …</p>
+<div class=pill-row>
+<span class="pill sm">Embedded C</span><span class="pill sm">TFLM</span><span class="pill sm">STM32</span><span class="pill sm">ARM Cortex-M4</span><span class="pill sm">PWM</span>
+</div>
+<div class="card-links mono">
+<a href=https://github.com/Eduardo79Silva/stm32-edge-ai target=_blank rel="noopener noreferrer">github ↗</a>
+</div>
+</div>
+<div class=project-row>
+<h3 class=mono>Spiking Neural Network</h3>
+<p>LIF neuron model built from scratch in Python. Implements membrane dynamics, weighted synaptic input, spike reset, and population-level raster/firing-rate visualization. Modular …</p>
+<div class=pill-row>
+<span class="pill sm">Python</span><span class="pill sm">NumPy</span><span class="pill sm">LIF Model</span><span class="pill sm">Computational Neuroscience</span><span class="pill sm">EEG</span>
+</div>
+<div class="card-links mono">
+<a href=https://github.com/Eduardo79Silva/spiking-neural-network target=_blank rel="noopener noreferrer">github ↗</a>
+</div>
+</div>
+<div class=project-row>
+<h3 class=mono>Hikari Ray Tracer</h3>
+<p>Vulkan-based path tracer with emissive materials and a denoiser. Physical device selection, descriptor sets, compute pipelines, SPIR-V shader compilation. Built as a research …</p>
+<div class=pill-row>
+<span class="pill sm">C++23</span><span class="pill sm">Vulkan</span><span class="pill sm">GLSL</span><span class="pill sm">GPU Computing</span><span class="pill sm">CMake</span>
+</div>
+<div class="card-links mono">
+<a href=https://github.com/Eduardo79Silva/Hikari-RayTracer target=_blank rel="noopener noreferrer">github ↗</a>
+</div>
+</div>
+</div>
+</div>
 </section>
-
-<section id="credentials" style="background: var(--bg-1);">
-  <div class="container">
-    <p class="section-label">Credentials</p>
-    
-    <div class="credential-row">
-      <div>
-        <p class="credential-title mono">Embedded Software and Hardware Architecture</p>
-        <p class="credential-issuer mono">University of Colorado Boulder · Coursera</p>
-      </div>
-      <div>
-        <p class="credential-date mono">Jun 2026</p>
-        <p class="credential-grade mono">95.32%</p>
-      </div>
-      <a href="https://coursera.org/verify/27XMXM91K1AD" target="_blank" rel="noopener noreferrer" class="credential-verify mono">verify ↗</a>
-    </div>
-    
-    <div class="credential-row">
-      <div>
-        <p class="credential-title mono">Introduction to Embedded Systems Software and Development Environments</p>
-        <p class="credential-issuer mono">University of Colorado Boulder · Coursera</p>
-      </div>
-      <div>
-        <p class="credential-date mono">Jun 2026</p>
-        <p class="credential-grade mono">93.92%</p>
-      </div>
-      <a href="https://coursera.org/verify/VOC7ZW58XDJC" target="_blank" rel="noopener noreferrer" class="credential-verify mono">verify ↗</a>
-    </div>
-    
-    <div class="credential-row">
-      <div>
-        <p class="credential-title mono">Azure AI Fundamentals (AI-900)</p>
-        <p class="credential-issuer mono">Microsoft · Microsoft Learn</p>
-      </div>
-      <div>
-        <p class="credential-date mono">Jun 2024</p>
-        
-      </div>
-      <a href="https://learn.microsoft.com/api/credentials/share/en-us/eduardosilva-3593/F9A01EFC7532F527?sharingId=ECBBA15F329F0074" target="_blank" rel="noopener noreferrer" class="credential-verify mono">verify ↗</a>
-    </div>
-    
-    <div class="divider-top"></div>
-  </div>
+<section id=cta class=alt-bg>
+<div class="container cta-inner">
+<h2>Open to ML, embedded,<br>and systems roles.</h2>
+<p>Remote-first or Portugal-based. Reach out if you're working on something technically interesting.</p>
+<div class=hero-links>
+<a href=mailto:eduardo4silva@gmail.com class="btn btn-accent mono">get in touch →</a>
+<a href=/about/ class="btn btn-ghost mono">more about me</a>
+</div>
+</div>
 </section>
-
-<section id="contact">
-  <div class="container">
-    <p class="section-label">Contact</p>
-    <h2 style="font-size: clamp(1.5rem, 4vw, 2rem); font-weight: 300; margin-bottom: 1rem;">Open to ML, embedded,<br>and systems roles.</h2>
-    <p style="font-size: 0.875rem; color: var(--muted); margin-bottom: 3rem; max-width: 28rem; line-height: 1.75;">Remote-first or Portugal-based. Reach out if you're working on something technically interesting.</p>
-    <div class="contact-row"><span class="contact-label mono">email</span><a href="mailto:eduardo4silva@gmail.com" class="contact-link mono">eduardo4silva@gmail.com ↗</a></div>
-    <div class="contact-row"><span class="contact-label mono">github</span><a href="https://github.com/eduardo79silva" target="_blank" rel="noopener noreferrer" class="contact-link mono">github.com/eduardo79silva ↗</a></div>
-    <div class="contact-row"><span class="contact-label mono">linkedin</span><a href="https://www.linkedin.com/in/eduardo79silva/" target="_blank" rel="noopener noreferrer" class="contact-link mono">linkedin.com/in/eduardo79silva ↗</a></div>
-    <div class="divider-top"></div>
-  </div>
-</section>
-
-
 </main>
-
 <footer>
-  <div class="container">
-    <span>Eduardo Silva</span>
-    <span>2026</span>
-  </div>
+<div class=container>
+<div class=footer-top>
+<div>
+<p class="footer-brand mono">eduardo<span class=accent>.</span>silva</p>
+<p class=footer-tag>ML systems · GPU pipelines · neural nets on bare metal</p>
+</div>
+<div class="footer-links mono">
+<a href=https://github.com/Eduardo79Silva target=_blank rel="noopener noreferrer">github ↗</a>
+<a href=https://www.linkedin.com/in/eduardo79silva/ target=_blank rel="noopener noreferrer">linkedin ↗</a>
+<a href=mailto:eduardo4silva@gmail.com>email ↗</a>
+</div>
+</div>
+<div class=footer-bottom>
+<span class=mono>© 2026 Eduardo Silva</span>
+<span class=mono>built with Hugo</span>
+</div>
+</div>
 </footer>
-
+<script>document.querySelector('.nav-toggle')?.addEventListener('click',function(){const a=document.querySelector('.nav-links'),b=a.classList.toggle('open');this.setAttribute('aria-expanded',b)})</script>
 </body>
 </html>
