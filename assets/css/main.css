@@ -338,6 +338,26 @@ nav .nav-links .cv.active::after { display: none; }
 .tl-company { font-size: 0.8rem; color: var(--accent); margin-bottom: 0.6rem; }
 .tl-detail { font-size: 0.9rem; color: var(--muted); line-height: 1.7; max-width: 46rem; }
 
+/* Bullet lists (experience details, resume) */
+.bullets { list-style: none; max-width: 46rem; }
+.bullets li {
+  position: relative;
+  padding-left: 1.1rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 0.35rem;
+}
+.bullets li:last-child { margin-bottom: 0; }
+.bullets li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-size: 0.75em;
+  top: 0.2em;
+}
+
 /* Stack (minimal rows) */
 .stack-list { display: flex; flex-direction: column; }
 .stack-row {

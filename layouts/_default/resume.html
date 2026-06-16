@@ -30,7 +30,13 @@
         <p class="resume-role mono">{{ .role }} <span class="resume-at">· {{ .company }}</span></p>
         <span class="resume-period mono">{{ .period }}</span>
       </div>
+      {{ with .details }}
+      <ul class="bullets">
+        {{ range . }}<li>{{ . }}</li>{{ end }}
+      </ul>
+      {{ else }}
       <p class="resume-detail">{{ .detail }}</p>
+      {{ end }}
     </div>
     {{ end }}
   </section>

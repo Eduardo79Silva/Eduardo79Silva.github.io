@@ -21,7 +21,13 @@
         <div class="tl-body">
           <p class="tl-role mono">{{ .role }}</p>
           <p class="tl-company mono">{{ .company }}</p>
+          {{ with .details }}
+          <ul class="bullets">
+            {{ range . }}<li>{{ . }}</li>{{ end }}
+          </ul>
+          {{ else }}
           <p class="tl-detail">{{ .detail }}</p>
+          {{ end }}
         </div>
       </div>
       {{ end }}
