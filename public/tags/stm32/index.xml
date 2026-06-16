@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>STM32 on Eduardo Silva</title>
+		<link>http://localhost:1313/tags/stm32/</link>
+		<description>Recent content in STM32 on Eduardo Silva</description>
+		<generator>Hugo</generator>
+		<language>en-us</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 01 Jun 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="http://localhost:1313/tags/stm32/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>Deploying a Neural Network on STM32 with No OS</title>
+				<link>http://localhost:1313/posts/stm32-tinyml-deployment/</link>
+				<pubDate>Mon, 01 Jun 2026 00:00:00 +0000</pubDate>
+				<guid>http://localhost:1313/posts/stm32-tinyml-deployment/</guid>
+				<description>&lt;p&gt;This is an example post. Replace with your actual content.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-goal&#34;&gt;The Goal&lt;/h2&gt;&#xA;&lt;p&gt;Run a trained neural network on an STM32 Nucleo-L476RG with no operating system, no heap allocator, and no external dependencies beyond TFLM.&lt;/p&gt;&#xA;&lt;h2 id=&#34;quantization&#34;&gt;Quantization&lt;/h2&gt;&#xA;&lt;p&gt;Post-training quantization converts float32 weights to int8, cutting model size by ~4x and making it feasible to fit in 128KB flash.&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;converter &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; tf&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lite&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;TFLiteConverter&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;from_keras_model(model)&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;converter&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;optimizations &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; [tf&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;lite&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;Optimize&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;DEFAULT]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;tflite_model &lt;span style=&#34;color:#ff79c6&#34;&gt;=&lt;/span&gt; converter&lt;span style=&#34;color:#ff79c6&#34;&gt;.&lt;/span&gt;convert()&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;deploying-to-flash&#34;&gt;Deploying to Flash&lt;/h2&gt;&#xA;&lt;p&gt;The quantized model is embedded as a C byte array and linked directly into flash memory — no filesystem needed.&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

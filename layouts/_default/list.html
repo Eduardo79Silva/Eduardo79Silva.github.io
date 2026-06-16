@@ -1,0 +1,30 @@
+{{ define "main" }}
+<div style="padding: 8rem 1.5rem 6rem;">
+  <div class="container">
+    <p class="section-label">Writing</p>
+    <h1 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; margin-bottom: 1rem;">Posts</h1>
+    <p style="font-size: 0.9375rem; color: var(--muted); margin-bottom: 4rem;">Technical writing on C++ systems, real-time rendering, ML engineering, and embedded AI.</p>
+
+    {{ if .Pages }}
+      <div class="divider-bottom">
+        {{ range .Pages }}
+        <a href="{{ .Permalink }}" style="display: block;">
+          <div class="post-row">
+            <span class="post-date mono">{{ .Date.Format "Jan 02, 2006" }}</span>
+            <div>
+              <p class="post-title">{{ .Title }}</p>
+              <p class="post-desc">{{ .Description }}</p>
+              <div class="post-tags">
+                {{ range .Params.tags }}<span>{{ . }}</span>{{ end }}
+              </div>
+            </div>
+          </div>
+        </a>
+        {{ end }}
+      </div>
+    {{ else }}
+      <p style="font-family: 'IBM Plex Mono', monospace; font-size: 0.875rem; color: var(--muted);">Posts coming soon — on Vulkan pipeline architecture, embedded ML deployment, and production ML lessons.</p>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

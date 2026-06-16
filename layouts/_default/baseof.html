@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }} — Systems Engineer{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+  {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+  {{ $css := resources.Get "css/main.css" | minify }}
+  <link rel="stylesheet" href="{{ $css.Permalink }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  {{ partial "analytics.html" . }}
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="brand mono">eduardo silva</a>
+    <div class="nav-links">
+      {{ if .IsHome }}
+        <a href="#projects">projects</a>
+        <a href="#experience">experience</a>
+        <a href="#stack">stack</a>
+        <a href="#contact">contact</a>
+        <a href="/posts">writing</a>
+      {{ else }}
+        <a href="/">home</a>
+        <a href="/posts">writing</a>
+      {{ end }}
+      <a href="/files/CV.pdf" target="_blank" rel="noopener noreferrer" class="cv mono">cv.pdf</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  {{ block "main" . }}{{ end }}
+</main>
+
+<footer>
+  <div class="container">
+    <span>Eduardo Silva</span>
+    <span>{{ now.Year }}</span>
+  </div>
+</footer>
+
+</body>
+</html>

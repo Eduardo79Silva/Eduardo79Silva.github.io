@@ -1,0 +1,24 @@
+- title: STM32 TinyML Sine
+  description: Trained a neural network, quantized it, and deployed it via TensorFlow Lite for Microcontrollers on an STM32 Nucleo-L476RG. The model drives a PWM output to trace a sine wave on an LED — inference running on an ARM Cortex-M4 with no OS, no heap allocator, no abstractions.
+  tags: [Embedded C, TFLM, STM32, ARM Cortex-M4, PWM]
+  github: https://github.com/Eduardo79Silva/stm32-edge-ai
+
+- title: Spiking Neural Network
+  description: LIF neuron model built from scratch in Python. Implements membrane dynamics, weighted synaptic input, spike reset, and population-level raster/firing-rate visualization. Modular architecture targeting EEG motor imagery classification on the PhysioNet dataset. AdEx neurons and STDP in progress.
+  tags: [Python, NumPy, LIF Model, Computational Neuroscience, EEG]
+  github: https://github.com/Eduardo79Silva/spiking-neural-network
+
+- title: Hikari Ray Tracer
+  description: Vulkan-based path tracer with emissive materials and a denoiser. Physical device selection, descriptor sets, compute pipelines, SPIR-V shader compilation. Built as a research platform for further integration with the Majin engine.
+  tags: [C++23, Vulkan, GLSL, GPU Computing, CMake]
+  github: https://github.com/Eduardo79Silva/Hikari-RayTracer
+
+- title: Majin Engine
+  description: 3D game engine in C++23 with a full Vulkan backend. Covers physical device selection, swap chain management, double-buffered command recording, render passes, push constants, and a 2D physics simulation with gravitational vector field visualization.
+  tags: [C++23, Vulkan, Physics, CMake, GLFW]
+  github: https://github.com/Eduardo79Silva/Majin
+
+- title: FEP University Chatbot
+  description: Production RAG chatbot for a Portuguese university. Azure OpenAI for inference, TypeScript + Python backend, custom deployment pipeline, on-premises delivery. Handles live student queries across the full knowledge base.
+  tags: [Azure OpenAI, RAG, TypeScript, Python, Production ML]
+  website: https://youtu.be/Qx2BIe12lSY

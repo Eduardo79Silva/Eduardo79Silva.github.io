@@ -1,0 +1,15 @@
+baseURL = "https://eduardo79silva.github.io/"
+languageCode = "en-us"
+title = "Eduardo Silva"
+
+[params]
+  description = "ML systems, GPU rendering pipelines, and neural networks on bare metal. C++, Python, Vulkan, STM32, TensorFlow Lite."
+  author = "Eduardo Silva"
+  ga_id = "G-DPW3RDS6H4"
+
+[markup.highlight]
+  style = "dracula"
+  noClasses = true
+
+[markup.goldmark.renderer]
+  unsafe = true

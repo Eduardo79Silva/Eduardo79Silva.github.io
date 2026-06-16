@@ -1,0 +1,11 @@
+- category: Systems / Embedded
+  items: [C++23, C, ARM Cortex-M, STM32, CMake, Vulkan, GLSL]
+
+- category: ML / AI
+  items: [Python, PyTorch, TensorFlow Lite, scikit-learn, NumPy, SciPy]
+
+- category: Cloud / Backend
+  items: [AWS Lambda, Azure OpenAI, TypeScript, Node.js, TypeORM, GraphQL]
+
+- category: Tools
+  items: [Git, Linux, Docker, GDB, CircleCI]

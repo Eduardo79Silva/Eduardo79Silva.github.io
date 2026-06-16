@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deploying a Neural Network on STM32 with No OS | Eduardo Silva</title>
+  <meta name="description" content="How I quantized a TensorFlow model and ran inference on an ARM Cortex-M4 with TFLite for Microcontrollers.">
+  <meta name="author" content="Eduardo Silva">
+  
+  <link rel="stylesheet" href="http://localhost:1313/css/main.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-DPW3RDS6H4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-DPW3RDS6H4', { page_path: window.location.pathname });
+</script>
+
+
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <a href="/" class="brand mono">eduardo silva</a>
+    <div class="nav-links">
+      
+        <a href="/">home</a>
+        <a href="/posts">writing</a>
+      
+      <a href="/files/CV.pdf" target="_blank" rel="noopener noreferrer" class="cv mono">cv.pdf</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  
+<div class="post-header container">
+  <a href="/posts" class="back-link mono">← all posts</a>
+  <h1>Deploying a Neural Network on STM32 with No OS</h1>
+  <div class="post-meta">
+    <span>June 01, 2026</span>
+    <span>1 min read</span>
+    <span>Eduardo Silva</span>
+  </div>
+</div>
+
+<div class="post-content container">
+  <p>This is an example post. Replace with your actual content.</p>
+<h2 id="the-goal">The Goal</h2>
+<p>Run a trained neural network on an STM32 Nucleo-L476RG with no operating system, no heap allocator, and no external dependencies beyond TFLM.</p>
+<h2 id="quantization">Quantization</h2>
+<p>Post-training quantization converts float32 weights to int8, cutting model size by ~4x and making it feasible to fit in 128KB flash.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>converter <span style="color:#ff79c6">=</span> tf<span style="color:#ff79c6">.</span>lite<span style="color:#ff79c6">.</span>TFLiteConverter<span style="color:#ff79c6">.</span>from_keras_model(model)
+</span></span><span style="display:flex;"><span>converter<span style="color:#ff79c6">.</span>optimizations <span style="color:#ff79c6">=</span> [tf<span style="color:#ff79c6">.</span>lite<span style="color:#ff79c6">.</span>Optimize<span style="color:#ff79c6">.</span>DEFAULT]
+</span></span><span style="display:flex;"><span>tflite_model <span style="color:#ff79c6">=</span> converter<span style="color:#ff79c6">.</span>convert()
+</span></span></code></pre></div><h2 id="deploying-to-flash">Deploying to Flash</h2>
+<p>The quantized model is embedded as a C byte array and linked directly into flash memory — no filesystem needed.</p>
+
+</div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>Eduardo Silva</span>
+    <span>2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

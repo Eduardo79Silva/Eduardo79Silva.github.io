@@ -1,0 +1,15 @@
+{{ define "main" }}
+<div class="post-header container">
+  <a href="/posts" class="back-link mono">← all posts</a>
+  <h1>{{ .Title }}</h1>
+  <div class="post-meta">
+    <span>{{ .Date.Format "January 02, 2006" }}</span>
+    <span>{{ .ReadingTime }} min read</span>
+    {{ with .Params.author }}<span>{{ . }}</span>{{ end }}
+  </div>
+</div>
+
+<div class="post-content container">
+  {{ .Content }}
+</div>
+{{ end }}
