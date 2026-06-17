@@ -3,6 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t !== 'light' && t !== 'dark') {
+          t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        }
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
   <title>{{ if .IsHome }}{{ .Site.Title }} — Systems Engineer{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
   <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
   {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
@@ -17,14 +28,19 @@
 <nav>
   <div class="container">
     <a href="/" class="brand mono">eduardo<span class="accent">.</span>silva</a>
-    <button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded="false">menu</button>
-    <div class="nav-links">
-      {{ $cur := .RelPermalink }}
-      <a href="/" {{ if eq $cur "/" }}class="active"{{ end }}>home</a>
-      <a href="/posts/" {{ if hasPrefix $cur "/posts" }}class="active"{{ end }}>writing</a>
-      <a href="/projects/" {{ if hasPrefix $cur "/projects" }}class="active"{{ end }}>projects</a>
-      <a href="/about/" {{ if hasPrefix $cur "/about" }}class="active"{{ end }}>about</a>
-      <a href="/resume/" class="cv mono {{ if hasPrefix $cur "/resume" }}active{{ end }}">resume</a>
+    <div class="nav-right">
+      <div class="nav-links">
+        {{ $cur := .RelPermalink }}
+        <a href="/" {{ if eq $cur "/" }}class="active"{{ end }}>home</a>
+        <a href="/posts/" {{ if hasPrefix $cur "/posts" }}class="active"{{ end }}>writing</a>
+        <a href="/projects/" {{ if hasPrefix $cur "/projects" }}class="active"{{ end }}>projects</a>
+        <a href="/about/" {{ if hasPrefix $cur "/about" }}class="active"{{ end }}>about</a>
+        <a href="/resume/" class="cv mono {{ if hasPrefix $cur "/resume" }}active{{ end }}">resume</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
+        <span class="ico-sun">☀</span><span class="ico-moon">☾</span>
+      </button>
+      <button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded="false">menu</button>
     </div>
   </div>
 </nav>
@@ -58,6 +74,12 @@
     const links = document.querySelector('.nav-links');
     const open = links.classList.toggle('open');
     this.setAttribute('aria-expanded', open);
+  });
+  document.getElementById('theme-toggle')?.addEventListener('click', function () {
+    const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
   });
 </script>
 
