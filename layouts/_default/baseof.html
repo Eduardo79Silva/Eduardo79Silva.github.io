@@ -37,9 +37,7 @@
         <a href="/about/" {{ if hasPrefix $cur "/about" }}class="active"{{ end }}>about</a>
         <a href="/resume/" class="cv mono {{ if hasPrefix $cur "/resume" }}active{{ end }}">resume</a>
       </div>
-      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme">
-        <span class="ico-sun">☀</span><span class="ico-moon">☾</span>
-      </button>
+      <button class="theme-toggle mono" id="theme-toggle" aria-label="Toggle light/dark theme"></button>
       <button class="nav-toggle mono" aria-label="Toggle menu" aria-expanded="false">menu</button>
     </div>
   </div>
